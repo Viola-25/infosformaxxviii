@@ -1,0 +1,593 @@
+<!DOCTYPE html>
+<html lang="pt-BR" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formatura | Turma 2026</title>
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Google Fonts: Inter (Leitura) e Playfair Display (Elegância) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&display=swap" rel="stylesheet">
+    
+    <!-- Phosphor Icons -->
+    <script src="https://unpkg.com/@phosphor-icons/web"></script>
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        brand: {
+                            900: '#0f172a', /* Azul Escuro / Slate 900 */
+                            800: '#1e293b',
+                            50: '#f8fafc',
+                        },
+                        gold: {
+                            300: '#fde047',
+                            400: '#facc15',
+                            500: '#eab308',
+                            600: '#ca8a04',
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        serif: ['Playfair Display', 'serif'],
+                    },
+                    animation: {
+                        'fade-in': 'fadeIn 1s ease-out forwards',
+                        'slide-up': 'slideUp 0.8s ease-out forwards',
+                    },
+                    keyframes: {
+                        fadeIn: {
+                            '0%': { opacity: '0' },
+                            '100%': { opacity: '1' },
+                        },
+                        slideUp: {
+                            '0%': { opacity: '0', transform: 'translateY(40px)' },
+                            '100%': { opacity: '1', transform: 'translateY(0)' },
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        .glass-nav {
+            background: rgba(15, 23, 42, 0.85);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+        }
+        
+        .bg-pattern {
+            background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23eab308' fill-opacity='0.05'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+        }
+
+        .reveal {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.8s ease-out;
+        }
+        .reveal.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* Oculta scrollbar mas permite rolagem (design mais limpo) */
+        .no-scrollbar::-webkit-scrollbar {
+            display: none;
+        }
+        .no-scrollbar {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+    </style>
+</head>
+<body class="bg-brand-50 text-slate-800 font-sans antialiased selection:bg-gold-500 selection:text-brand-900 overflow-x-hidden">
+
+    <!-- Navegação -->
+    <nav class="fixed w-full z-50 transition-all duration-300" id="navbar">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-20">
+                <!-- Logo -->
+                <div class="flex-shrink-0 flex items-center">
+                    <a href="#" class="font-serif text-xl md:text-2xl font-bold text-white tracking-wider flex items-center gap-2">
+                        <i class="ph-fill ph-graduation-cap text-gold-500 text-3xl"></i>
+                        TURMA <span class="text-gold-500">2026</span>
+                    </a>
+                </div>
+                <!-- Links Desktop -->
+                <div class="hidden lg:flex space-x-6 items-center">
+                    <a href="#cronograma" class="text-gray-300 hover:text-gold-400 transition-colors text-xs font-medium tracking-wide uppercase">Cronograma</a>
+                    <a href="#atracoes" class="text-gray-300 hover:text-gold-400 transition-colors text-xs font-medium tracking-wide uppercase">Atrações</a>
+                    <a href="#cardapio" class="text-gray-300 hover:text-gold-400 transition-colors text-xs font-medium tracking-wide uppercase">Cardápio & Open</a>
+                    <a href="#instrucoes" class="text-gray-300 hover:text-gold-400 transition-colors text-xs font-medium tracking-wide uppercase">Instruções</a>
+                    <a href="#playlists" class="text-gray-300 hover:text-gold-400 transition-colors text-xs font-medium tracking-wide uppercase">Playlists</a>
+                </div>
+                <!-- Botão Mobile -->
+                <div class="lg:hidden flex items-center">
+                    <button id="mobile-menu-btn" class="text-white hover:text-gold-400 focus:outline-none p-2">
+                        <i class="ph ph-list text-3xl"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+        <!-- Menu Mobile -->
+        <div id="mobile-menu" class="hidden lg:hidden glass-nav border-t border-white/10">
+            <div class="px-4 pt-2 pb-6 space-y-2 flex flex-col">
+                <a href="#cronograma" class="text-gray-300 hover:text-gold-400 block py-3 border-b border-white/5 text-sm font-medium uppercase tracking-wider">Cronograma</a>
+                <a href="#atracoes" class="text-gray-300 hover:text-gold-400 block py-3 border-b border-white/5 text-sm font-medium uppercase tracking-wider">Atrações</a>
+                <a href="#cardapio" class="text-gray-300 hover:text-gold-400 block py-3 border-b border-white/5 text-sm font-medium uppercase tracking-wider">Cardápio & Open</a>
+                <a href="#instrucoes" class="text-gray-300 hover:text-gold-400 block py-3 border-b border-white/5 text-sm font-medium uppercase tracking-wider">Instruções</a>
+                <a href="#playlists" class="text-gray-300 hover:text-gold-400 block py-3 text-sm font-medium uppercase tracking-wider">Playlists</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero & Countdown -->
+    <section class="relative min-h-[90vh] flex flex-col items-center justify-center bg-brand-900 overflow-hidden pt-20">
+        <!-- Background Imagem + Overlay -->
+        <div class="absolute inset-0 z-0">
+            <img src="https://placehold.co/1920x1080/0f172a/1e293b?text=Foto+da+Turma" alt="Fundo" class="w-full h-full object-cover opacity-40 mix-blend-overlay">
+            <div class="absolute inset-0 bg-gradient-to-t from-brand-900 via-brand-900/80 to-brand-900/40"></div>
+            <div class="absolute inset-0 bg-pattern opacity-30"></div>
+        </div>
+
+        <div class="relative z-10 text-center px-6 max-w-5xl mx-auto w-full">
+            <div class="animate-slide-up">
+                <span class="text-gold-400 font-sans tracking-[0.4em] uppercase text-xs md:text-sm font-semibold mb-4 block">O Grande Dia Chegou</span>
+                <h1 class="font-serif text-5xl md:text-7xl lg:text-8xl text-white font-bold leading-tight mb-6">
+                    Formatura <br/>
+                    <span class="text-transparent bg-clip-text bg-gradient-to-r from-gold-300 to-gold-600">Turma 2026</span>
+                </h1>
+                <p class="text-gray-300 text-lg md:text-xl max-w-2xl mx-auto font-light mb-12">
+                    Comissão de Formatura convida familiares e amigos para celebrarmos juntos o fim desta jornada épica.
+                </p>
+            </div>
+
+            <!-- Contagem Regressiva UI -->
+            <div class="grid grid-cols-4 gap-2 md:gap-6 max-w-3xl mx-auto animate-slide-up" style="animation-delay: 0.2s;">
+                <div class="bg-white/5 backdrop-blur-md border border-white/10 rounded-2xl p-3 md:p-6 text-center">
+                    <span id="dias" class="block text-3xl md:text-5xl font-serif font-bold text-white mb-1">00</span>
+                    <span class="text-[10px] md:text-xs uppercase tracking-widest text-gold-400 font-medium">Dias</span>
+                </div>
+                <div class="bg-white/5 backdrop-blur-md border border-white/10 rounded-2xl p-3 md:p-6 text-center">
+                    <span id="horas" class="block text-3xl md:text-5xl font-serif font-bold text-white mb-1">00</span>
+                    <span class="text-[10px] md:text-xs uppercase tracking-widest text-gold-400 font-medium">Horas</span>
+                </div>
+                <div class="bg-white/5 backdrop-blur-md border border-white/10 rounded-2xl p-3 md:p-6 text-center">
+                    <span id="minutos" class="block text-3xl md:text-5xl font-serif font-bold text-white mb-1">00</span>
+                    <span class="text-[10px] md:text-xs uppercase tracking-widest text-gold-400 font-medium">Minutos</span>
+                </div>
+                <div class="bg-white/5 backdrop-blur-md border border-white/10 rounded-2xl p-3 md:p-6 text-center">
+                    <span id="segundos" class="block text-3xl md:text-5xl font-serif font-bold text-white mb-1">00</span>
+                    <span class="text-[10px] md:text-xs uppercase tracking-widest text-gold-400 font-medium">Segundos</span>
+                </div>
+            </div>
+            
+            <!-- Rolagem -->
+            <div class="mt-16 text-gray-400 flex flex-col items-center animate-slide-up" style="animation-delay: 0.4s;">
+                <span class="text-xs uppercase tracking-widest mb-3">Deslize para ver tudo</span>
+                <i class="ph ph-arrow-down animate-bounce text-2xl text-gold-500"></i>
+            </div>
+        </div>
+    </section>
+
+    <!-- Cronograma -->
+    <section id="cronograma" class="py-24 bg-white relative">
+        <div class="max-w-6xl mx-auto px-6">
+            <div class="text-center mb-16 reveal">
+                <span class="text-gold-600 font-bold tracking-widest uppercase text-sm">Agenda Oficial</span>
+                <h2 class="font-serif text-4xl md:text-5xl text-brand-900 font-bold mt-2">Cronograma de Eventos</h2>
+            </div>
+
+            <div class="relative">
+                <!-- Linha do tempo (visível apenas desktop) -->
+                <div class="hidden md:block absolute left-1/2 transform -translate-x-1/2 w-0.5 h-full bg-gold-200"></div>
+
+                <div class="space-y-12">
+                    <!-- Evento 1 -->
+                    <div class="relative flex flex-col md:flex-row items-center justify-between group reveal">
+                        <div class="md:w-5/12 mb-6 md:mb-0 text-center md:text-right pr-0 md:pr-10">
+                            <h3 class="font-serif text-2xl font-bold text-brand-900">Missa & Culto Ecumênico</h3>
+                            <p class="text-gold-600 font-semibold mb-2">12 de Dezembro • 19h00</p>
+                            <p class="text-slate-600">Um momento de gratidão. Traje esporte fino. Entrada gratuita para todos os convidados.</p>
+                            <p class="text-sm font-medium mt-3"><i class="ph-fill ph-map-pin text-gold-500"></i> Catedral da Cidade</p>
+                        </div>
+                        <div class="hidden md:flex absolute left-1/2 transform -translate-x-1/2 w-12 h-12 rounded-full bg-brand-900 border-4 border-white items-center justify-center z-10 shadow-lg group-hover:scale-110 transition-transform">
+                            <i class="ph-fill ph-church text-gold-400 text-xl"></i>
+                        </div>
+                        <div class="md:w-5/12 pl-0 md:pl-10">
+                            <img src="https://placehold.co/600x400/f8fafc/cbd5e1?text=Local+da+Missa" alt="Missa" class="rounded-2xl shadow-md w-full object-cover h-48">
+                        </div>
+                    </div>
+
+                    <!-- Evento 2 -->
+                    <div class="relative flex flex-col md:flex-row-reverse items-center justify-between group reveal">
+                        <div class="md:w-5/12 mb-6 md:mb-0 text-center md:text-left pl-0 md:pl-10">
+                            <h3 class="font-serif text-2xl font-bold text-brand-900">Colação de Grau</h3>
+                            <p class="text-gold-600 font-semibold mb-2">13 de Dezembro • 20h00</p>
+                            <p class="text-slate-600">A cerimônia oficial de entrega dos canudos. Exige-se apresentação de convite individual.</p>
+                            <p class="text-sm font-medium mt-3"><i class="ph-fill ph-map-pin text-gold-500"></i> Centro de Convenções - Auditório A</p>
+                        </div>
+                        <div class="hidden md:flex absolute left-1/2 transform -translate-x-1/2 w-12 h-12 rounded-full bg-brand-900 border-4 border-white items-center justify-center z-10 shadow-lg group-hover:scale-110 transition-transform">
+                            <i class="ph-fill ph-graduation-cap text-gold-400 text-xl"></i>
+                        </div>
+                        <div class="md:w-5/12 pr-0 md:pr-10">
+                            <img src="https://placehold.co/600x400/f8fafc/cbd5e1?text=Palco+da+Colacao" alt="Colação" class="rounded-2xl shadow-md w-full object-cover h-48">
+                        </div>
+                    </div>
+
+                    <!-- Evento 3 -->
+                    <div class="relative flex flex-col md:flex-row items-center justify-between group reveal">
+                        <div class="md:w-5/12 mb-6 md:mb-0 text-center md:text-right pr-0 md:pr-10">
+                            <h3 class="font-serif text-2xl font-bold text-brand-900">Jantar & Baile de Gala</h3>
+                            <p class="text-gold-600 font-semibold mb-2">15 de Dezembro • 22h00 às 06h00</p>
+                            <p class="text-slate-600">A grande festa! Jantar servido até 01h, seguido de 5 horas de muita festa com open bar premium.</p>
+                            <p class="text-sm font-medium mt-3"><i class="ph-fill ph-map-pin text-gold-500"></i> Pavilhão de Exposições</p>
+                        </div>
+                        <div class="hidden md:flex absolute left-1/2 transform -translate-x-1/2 w-12 h-12 rounded-full bg-gold-500 border-4 border-white items-center justify-center z-10 shadow-lg group-hover:scale-110 transition-transform">
+                            <i class="ph-fill ph-confetti text-brand-900 text-xl"></i>
+                        </div>
+                        <div class="md:w-5/12 pl-0 md:pl-10">
+                            <img src="https://placehold.co/600x400/f8fafc/cbd5e1?text=Decoracao+do+Baile" alt="Baile" class="rounded-2xl shadow-md w-full object-cover h-48">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Atrações -->
+    <section id="atracoes" class="py-24 bg-brand-50 border-t border-slate-200">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="text-center mb-16 reveal">
+                <h2 class="font-serif text-4xl md:text-5xl text-brand-900 font-bold mb-4">Line-up & Atrações</h2>
+                <p class="text-slate-500 max-w-2xl mx-auto">Preparamos atrações incríveis para não deixar ninguém parado no Baile de Gala.</p>
+            </div>
+
+            <div class="grid md:grid-cols-3 gap-8">
+                <!-- Banda 1 -->
+                <div class="bg-white rounded-[2rem] overflow-hidden shadow-xl shadow-slate-200/50 group reveal">
+                    <div class="relative h-64 overflow-hidden">
+                        <img src="https://placehold.co/800x600/1e293b/facc15?text=Banda+Baile" alt="Banda de Baile" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent"></div>
+                        <div class="absolute bottom-4 left-6 text-white">
+                            <span class="bg-gold-500 text-brand-900 text-xs font-bold px-3 py-1 rounded-full uppercase tracking-wider mb-2 inline-block">23h00 - 02h00</span>
+                            <h3 class="font-serif text-2xl font-bold">Banda Show Master</h3>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <p class="text-slate-600 text-sm">Para abrir a pista com classe! Repertório eclético passando pelos maiores sucessos de todas as décadas, valsa dos formandos e ritmos variados.</p>
+                    </div>
+                </div>
+
+                <!-- Atração Nacional / Principal -->
+                <div class="bg-brand-900 rounded-[2rem] overflow-hidden shadow-2xl shadow-brand-900/20 transform md:-translate-y-4 group reveal" style="transition-delay: 100ms;">
+                    <div class="relative h-64 overflow-hidden">
+                        <img src="https://placehold.co/800x600/0f172a/facc15?text=Atracao+Principal" alt="Atração Principal" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/40 to-transparent"></div>
+                        <div class="absolute top-4 right-4 bg-gold-500 text-brand-900 w-12 h-12 rounded-full flex items-center justify-center font-bold shadow-lg">
+                            <i class="ph-fill ph-star text-2xl"></i>
+                        </div>
+                        <div class="absolute bottom-4 left-6 text-white">
+                            <span class="bg-white/20 backdrop-blur-sm text-white border border-white/30 text-xs font-bold px-3 py-1 rounded-full uppercase tracking-wider mb-2 inline-block">02h30 - 04h00</span>
+                            <h3 class="font-serif text-3xl font-bold text-gold-400">Cantor Sertanejo</h3>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <p class="text-slate-300 text-sm">A atração mais aguardada da noite! O melhor do sertanejo universitário para cantar junto até perder a voz.</p>
+                    </div>
+                </div>
+
+                <!-- DJ / After -->
+                <div class="bg-white rounded-[2rem] overflow-hidden shadow-xl shadow-slate-200/50 group reveal" style="transition-delay: 200ms;">
+                    <div class="relative h-64 overflow-hidden">
+                        <img src="https://placehold.co/800x600/1e293b/facc15?text=DJ+Eletronica" alt="DJ" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent"></div>
+                        <div class="absolute bottom-4 left-6 text-white">
+                            <span class="bg-purple-600 text-white text-xs font-bold px-3 py-1 rounded-full uppercase tracking-wider mb-2 inline-block">04h00 - 06h00</span>
+                            <h3 class="font-serif text-2xl font-bold">DJ Residente</h3>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <p class="text-slate-600 text-sm">Para os inimigos do fim. Um set exclusivo de funk e música eletrônica acompanhado de café da manhã servido na pista.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Cardápio e Open Bar -->
+    <section id="cardapio" class="py-24 bg-brand-900 relative overflow-hidden">
+        <div class="absolute inset-0 z-0 opacity-10 bg-pattern"></div>
+        <div class="max-w-7xl mx-auto px-6 relative z-10">
+            <div class="text-center mb-16 reveal">
+                <span class="text-gold-500 font-bold tracking-widest uppercase text-sm">Gastronomia</span>
+                <h2 class="font-serif text-4xl md:text-5xl text-white font-bold mt-2">Cardápio & Open Bar</h2>
+            </div>
+
+            <div class="grid md:grid-cols-2 gap-10">
+                <!-- Coluna Food -->
+                <div class="bg-white/5 backdrop-blur-sm border border-white/10 p-8 md:p-10 rounded-3xl reveal">
+                    <div class="flex items-center gap-4 mb-8 border-b border-white/10 pb-6">
+                        <div class="w-14 h-14 rounded-full bg-gold-500/20 text-gold-400 flex items-center justify-center">
+                            <i class="ph-fill ph-fork-knife text-3xl"></i>
+                        </div>
+                        <h3 class="font-serif text-3xl text-white font-bold">Ilhas & Jantar</h3>
+                    </div>
+
+                    <div class="space-y-8">
+                        <div>
+                            <h4 class="text-gold-400 font-bold uppercase tracking-wider text-sm mb-3">Mesa de Frios (Entrada)</h4>
+                            <ul class="text-slate-300 space-y-2 text-sm">
+                                <li>• Queijos nobres (Brie, Parmesão, Gorgonzola)</li>
+                                <li>• Presunto Parma e Embutidos artesanais</li>
+                                <li>• Pães de fermentação natural, patês e geleias</li>
+                                <li>• Carpaccio clássico com alcaparras</li>
+                            </ul>
+                        </div>
+                        <div>
+                            <h4 class="text-gold-400 font-bold uppercase tracking-wider text-sm mb-3">Pratos Quentes (Jantar)</h4>
+                            <ul class="text-slate-300 space-y-2 text-sm">
+                                <li>• Escalope de Mignon ao molho madeira</li>
+                                <li>• Salmão grelhado com alho poró e amêndoas</li>
+                                <li>• Ravioli de Búfala ao pomodoro (Opção Vegetariana)</li>
+                                <li>• Risoto de Funghi Secchi</li>
+                            </ul>
+                        </div>
+                        <div>
+                            <h4 class="text-gold-400 font-bold uppercase tracking-wider text-sm mb-3">Madrugada</h4>
+                            <ul class="text-slate-300 space-y-2 text-sm">
+                                <li>• Mini hambúrguer gourmet e batata frita (03h)</li>
+                                <li>• Mesa de Café da Manhã Completa (05h)</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Coluna Drinks -->
+                <div class="bg-white/5 backdrop-blur-sm border border-white/10 p-8 md:p-10 rounded-3xl reveal" style="transition-delay: 100ms;">
+                    <div class="flex items-center gap-4 mb-8 border-b border-white/10 pb-6">
+                        <div class="w-14 h-14 rounded-full bg-gold-500/20 text-gold-400 flex items-center justify-center">
+                            <i class="ph-fill ph-martini text-3xl"></i>
+                        </div>
+                        <h3 class="font-serif text-3xl text-white font-bold">Open Bar Premium</h3>
+                    </div>
+
+                    <div class="space-y-8">
+                        <div>
+                            <h4 class="text-gold-400 font-bold uppercase tracking-wider text-sm mb-3">Cervejas</h4>
+                            <ul class="text-slate-300 space-y-2 text-sm">
+                                <li>• Chopp Artesanal (Pilsen e IPA)</li>
+                                <li>• Heineken e Stella Artois (Garrafa)</li>
+                                <li>• Cerveja sem álcool</li>
+                            </ul>
+                        </div>
+                        <div>
+                            <h4 class="text-gold-400 font-bold uppercase tracking-wider text-sm mb-3">Destilados & Drinks</h4>
+                            <ul class="text-slate-300 space-y-2 text-sm">
+                                <li>• Whisky Chivas Regal 12 Anos</li>
+                                <li>• Vodka Absolut</li>
+                                <li>• Gin Bombay Sapphire (Ilha de Gin com especiarias)</li>
+                                <li>• Bar de Caipirinhas (Saquê, Vodka e Cachaça)</li>
+                                <li>• Moscow Mule, Aperol Spritz e Negroni</li>
+                            </ul>
+                        </div>
+                        <div>
+                            <h4 class="text-gold-400 font-bold uppercase tracking-wider text-sm mb-3">Não Alcoólicos</h4>
+                            <ul class="text-slate-300 space-y-2 text-sm">
+                                <li>• Sucos naturais variados</li>
+                                <li>• Refrigerantes (Normal e Zero)</li>
+                                <li>• Água Tônica e Água Mineral (com e sem gás)</li>
+                                <li>• Energético Red Bull</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Instruções e Informações Importantes -->
+    <section id="instrucoes" class="py-24 bg-brand-50">
+        <div class="max-w-5xl mx-auto px-6">
+            <div class="text-center mb-16 reveal">
+                <h2 class="font-serif text-4xl md:text-5xl text-brand-900 font-bold mb-4">Informações Importantes</h2>
+                <p class="text-slate-500">Tudo o que você precisa saber para aproveitar a noite sem preocupações.</p>
+            </div>
+
+            <div class="grid md:grid-cols-2 gap-6">
+                <!-- Card 1 -->
+                <div class="bg-white p-6 rounded-2xl shadow-sm border border-slate-100 flex gap-4 reveal">
+                    <div class="flex-shrink-0 mt-1">
+                        <i class="ph-fill ph-coat-hanger text-3xl text-gold-500"></i>
+                    </div>
+                    <div>
+                        <h4 class="font-bold text-brand-900 text-lg mb-1">Dress Code (Traje)</h4>
+                        <p class="text-sm text-slate-600"><strong>Gala / Passeio Completo.</strong> Para homens: Terno escuro completo com gravata. Para mulheres: Vestido longo. Não será permitida a entrada de bermuda, regata, boné ou chinelo.</p>
+                    </div>
+                </div>
+
+                <!-- Card 2 -->
+                <div class="bg-white p-6 rounded-2xl shadow-sm border border-slate-100 flex gap-4 reveal">
+                    <div class="flex-shrink-0 mt-1">
+                        <i class="ph-fill ph-ticket text-3xl text-gold-500"></i>
+                    </div>
+                    <div>
+                        <h4 class="font-bold text-brand-900 text-lg mb-1">Ingressos e Acesso</h4>
+                        <p class="text-sm text-slate-600">Apresentação obrigatória do <strong>convite físico e documento com foto</strong> na portaria. Crianças até 6 anos não pagam convite extra, mas devem apresentar documento.</p>
+                    </div>
+                </div>
+
+                <!-- Card 3 -->
+                <div class="bg-white p-6 rounded-2xl shadow-sm border border-slate-100 flex gap-4 reveal">
+                    <div class="flex-shrink-0 mt-1">
+                        <i class="ph-fill ph-car text-3xl text-gold-500"></i>
+                    </div>
+                    <div>
+                        <h4 class="font-bold text-brand-900 text-lg mb-1">Estacionamento</h4>
+                        <p class="text-sm text-slate-600">O local do Baile conta com estacionamento privativo e serviço de Valet. O custo é de R$ 40,00 por veículo. Se for beber, prefira usar aplicativos de transporte.</p>
+                    </div>
+                </div>
+
+                <!-- Card 4 -->
+                <div class="bg-white p-6 rounded-2xl shadow-sm border border-slate-100 flex gap-4 reveal">
+                    <div class="flex-shrink-0 mt-1">
+                        <i class="ph-fill ph-bag text-3xl text-gold-500"></i>
+                    </div>
+                    <div>
+                        <h4 class="font-bold text-brand-900 text-lg mb-1">Chapelaria Gratuita</h4>
+                        <p class="text-sm text-slate-600">Haverá serviço de chapelaria no hall de entrada para guardar bolsas, casacos e sapatos (quando descerem do salto!). Retirada mediante pulseira numerada.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Playlists para entrar no clima -->
+    <section id="playlists" class="py-24 bg-white border-t border-slate-100">
+        <div class="max-w-5xl mx-auto px-6 text-center reveal">
+            <i class="ph-fill ph-spotify-logo text-6xl text-green-500 mb-6 mx-auto"></i>
+            <h2 class="font-serif text-3xl md:text-4xl text-brand-900 font-bold mb-4">Já vai entrando no clima!</h2>
+            <p class="text-slate-500 mb-12 max-w-2xl mx-auto">A comissão preparou duas playlists exclusivas no Spotify para você ir aquecendo para o nosso baile. Salve aí!</p>
+
+            <div class="flex flex-col md:flex-row justify-center gap-6">
+                <!-- Playlist 1 (Mockup visual) -->
+                <a href="#" class="block bg-brand-900 p-4 rounded-3xl w-full md:w-80 text-left hover:scale-105 transition-transform duration-300 shadow-xl shadow-brand-900/20 group">
+                    <div class="relative w-full h-48 rounded-2xl overflow-hidden mb-4">
+                        <img src="https://placehold.co/400x400/1ed760/000000?text=Aquecimento" alt="Capa Playlist" class="w-full h-full object-cover">
+                        <div class="absolute inset-0 bg-black/30 group-hover:bg-transparent transition-colors"></div>
+                        <div class="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity">
+                            <div class="w-16 h-16 bg-green-500 rounded-full flex items-center justify-center shadow-lg">
+                                <i class="ph-fill ph-play text-black text-2xl ml-1"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="px-2 pb-2">
+                        <h4 class="text-white font-bold text-lg mb-1 truncate">Esquenta Baile 2026</h4>
+                        <p class="text-slate-400 text-xs">Pela Comissão de Formatura • 5h 30min</p>
+                    </div>
+                </a>
+
+                <!-- Playlist 2 (Mockup visual) -->
+                <a href="#" class="block bg-brand-900 p-4 rounded-3xl w-full md:w-80 text-left hover:scale-105 transition-transform duration-300 shadow-xl shadow-brand-900/20 group">
+                    <div class="relative w-full h-48 rounded-2xl overflow-hidden mb-4">
+                        <img src="https://placehold.co/400x400/eab308/000000?text=Sertanejo+Raiz" alt="Capa Playlist" class="w-full h-full object-cover">
+                        <div class="absolute inset-0 bg-black/30 group-hover:bg-transparent transition-colors"></div>
+                        <div class="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity">
+                            <div class="w-16 h-16 bg-green-500 rounded-full flex items-center justify-center shadow-lg">
+                                <i class="ph-fill ph-play text-black text-2xl ml-1"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="px-2 pb-2">
+                        <h4 class="text-white font-bold text-lg mb-1 truncate">Sofrencia & Sertanejo</h4>
+                        <p class="text-slate-400 text-xs">Pela Comissão de Formatura • 3h 15min</p>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-brand-900 py-12 border-t border-white/10 text-center">
+        <div class="max-w-4xl mx-auto px-6">
+            <div class="flex items-center justify-center gap-2 mb-4">
+                <i class="ph-fill ph-graduation-cap text-gold-500 text-2xl"></i>
+                <h2 class="font-serif text-xl text-white font-bold tracking-wider">COMISSÃO 2026</h2>
+            </div>
+            <p class="text-slate-400 text-sm mb-2">Dúvidas? Entre em contato com o formando que te convidou ou com a comissão.</p>
+            <p class="text-slate-500 text-xs mt-8">© 2026 Comissão de Formatura. Desenvolvido para um dia inesquecível.</p>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script>
+        // 1. Controle do Menu Mobile
+        const btn = document.getElementById('mobile-menu-btn');
+        const menu = document.getElementById('mobile-menu');
+
+        btn.addEventListener('click', () => {
+            menu.classList.toggle('hidden');
+        });
+
+        // Fecha menu ao clicar nos links
+        const menuLinks = menu.querySelectorAll('a');
+        menuLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                menu.classList.add('hidden');
+            });
+        });
+
+        // 2. Efeito Navbar Transparente/Sólida no Scroll
+        const navbar = document.getElementById('navbar');
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 50) {
+                navbar.classList.add('glass-nav', 'shadow-lg');
+                navbar.classList.remove('bg-transparent');
+            } else {
+                navbar.classList.remove('glass-nav', 'shadow-lg');
+                navbar.classList.add('bg-transparent');
+            }
+        });
+
+        // 3. Scroll Reveal (Animação de aparecer ao rolar a página)
+        function reveal() {
+            var reveals = document.querySelectorAll(".reveal");
+            for (var i = 0; i < reveals.length; i++) {
+                var windowHeight = window.innerHeight;
+                var elementTop = reveals[i].getBoundingClientRect().top;
+                var elementVisible = 100; // Quando o elemento entra 100px na tela
+                
+                if (elementTop < windowHeight - elementVisible) {
+                    reveals[i].classList.add("active");
+                }
+            }
+        }
+        window.addEventListener("scroll", reveal);
+        reveal(); // Chama na carga inicial
+
+        // 4. Lógica da Contagem Regressiva (Countdown)
+        // Defina a data da formatura aqui (Ano, Mês [0-11 onde 0 é Janeiro], Dia, Hora, Minuto)
+        // Exemplo: 15 de Dezembro de 2026 às 22:00
+        const dataFormatura = new Date(2026, 11, 15, 22, 0, 0).getTime();
+
+        const atualizarContador = setInterval(function() {
+            const agora = new Date().getTime();
+            const diferenca = dataFormatura - agora;
+
+            // Cálculos para dias, horas, minutos e segundos
+            const dias = Math.floor(diferenca / (1000 * 60 * 60 * 24));
+            const horas = Math.floor((diferenca % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            const minutos = Math.floor((diferenca % (1000 * 60 * 60)) / (1000 * 60));
+            const segundos = Math.floor((diferenca % (1000 * 60)) / 1000);
+
+            // Atualiza o HTML se os elementos existirem
+            const elDias = document.getElementById("dias");
+            if (elDias) {
+                elDias.innerText = dias < 10 ? "0" + dias : dias;
+                document.getElementById("horas").innerText = horas < 10 ? "0" + horas : horas;
+                document.getElementById("minutos").innerText = minutos < 10 ? "0" + minutos : minutos;
+                document.getElementById("segundos").innerText = segundos < 10 ? "0" + segundos : segundos;
+            }
+
+            // Se a contagem terminar, exibe mensagem
+            if (diferenca < 0) {
+                clearInterval(atualizarContador);
+                if(elDias) {
+                    document.getElementById("dias").innerText = "00";
+                    document.getElementById("horas").innerText = "00";
+                    document.getElementById("minutos").innerText = "00";
+                    document.getElementById("segundos").innerText = "00";
+                }
+            }
+        }, 1000);
+    </script>
+</body>
+</html>
