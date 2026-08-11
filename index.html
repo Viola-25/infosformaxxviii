@@ -3,16 +3,20 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Formatura | Turma 2026</title>
-    
+    <title>Medicina Turma XXVIII | Formatura São Camilo</title>
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="Brasão-09.png">
+    <link rel="apple-touch-icon" href="Brasão-09.png">
+
     <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
-    
-    <!-- Google Fonts: Inter (Leitura) e Playfair Display (Elegância) -->
+
+    <!-- Google Fonts: Fraunces (títulos) e Nunito Sans (leitura) -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&display=swap" rel="stylesheet">
-    
+    <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;0,9..144,700;1,9..144,400;1,9..144,600&family=Nunito+Sans:ital,opsz,wght@0,6..12,300;0,6..12,400;0,6..12,600;0,6..12,700;1,6..12,400&display=swap" rel="stylesheet">
+
     <!-- Phosphor Icons -->
     <script src="https://unpkg.com/@phosphor-icons/web"></script>
 
@@ -22,20 +26,21 @@
                 extend: {
                     colors: {
                         brand: {
-                            900: '#0f172a', /* Azul Escuro / Slate 900 */
-                            800: '#1e293b',
-                            50: '#f8fafc',
-                        },
-                        gold: {
-                            300: '#fde047',
-                            400: '#facc15',
-                            500: '#eab308',
-                            600: '#ca8a04',
+                            900: '#471010', /* Grená escuro */
+                            800: '#5f1717',
+                            700: '#7d2222',
+                            600: '#9a2d2d',
+                            500: '#b83c3c',
+                            400: '#d06a6a',
+                            300: '#e09a9a',
+                            200: '#efc4c4',
+                            100: '#f7dada',
+                            50: '#fdf7f4',
                         }
                     },
                     fontFamily: {
-                        sans: ['Inter', 'sans-serif'],
-                        serif: ['Playfair Display', 'serif'],
+                        sans: ['Nunito Sans', 'sans-serif'],
+                        serif: ['Fraunces', 'serif'],
                     },
                     animation: {
                         'fade-in': 'fadeIn 1s ease-out forwards',
@@ -58,14 +63,14 @@
 
     <style>
         .glass-nav {
-            background: rgba(15, 23, 42, 0.85);
+            background: rgba(71, 16, 16, 0.85);
             backdrop-filter: blur(12px);
             -webkit-backdrop-filter: blur(12px);
             border-bottom: 1px solid rgba(255, 255, 255, 0.05);
         }
-        
+
         .bg-pattern {
-            background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23eab308' fill-opacity='0.05'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+            background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23471010' fill-opacity='0.06'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
         }
 
         .reveal {
@@ -78,7 +83,11 @@
             transform: translateY(0);
         }
 
-        /* Oculta scrollbar mas permite rolagem (design mais limpo) */
+        /* Ajuste de rolagem para não esconder o título atrás da nav fixa */
+        section[id] {
+            scroll-margin-top: 5.5rem;
+        }
+
         .no-scrollbar::-webkit-scrollbar {
             display: none;
         }
@@ -88,7 +97,7 @@
         }
     </style>
 </head>
-<body class="bg-brand-50 text-slate-800 font-sans antialiased selection:bg-gold-500 selection:text-brand-900 overflow-x-hidden">
+<body class="bg-brand-50 text-slate-800 font-sans antialiased selection:bg-brand-500 selection:text-white overflow-x-hidden">
 
     <!-- Navegação -->
     <nav class="fixed w-full z-50 transition-all duration-300" id="navbar">
@@ -96,22 +105,26 @@
             <div class="flex justify-between items-center h-20">
                 <!-- Logo -->
                 <div class="flex-shrink-0 flex items-center">
-                    <a href="#" class="font-serif text-xl md:text-2xl font-bold text-white tracking-wider flex items-center gap-2">
-                        <i class="ph-fill ph-graduation-cap text-gold-500 text-3xl"></i>
-                        TURMA <span class="text-gold-500">2026</span>
+                    <a href="#" class="font-serif text-xl md:text-2xl font-bold text-white tracking-wider flex items-center gap-3">
+                        <img src="Brasão-09.png" alt="Brasão da Turma XXVIII" class="w-11 h-auto object-contain">
+                        TURMA <span class="text-brand-500">XXVIII</span>
                     </a>
                 </div>
                 <!-- Links Desktop -->
                 <div class="hidden lg:flex space-x-6 items-center">
-                    <a href="#cronograma" class="text-gray-300 hover:text-gold-400 transition-colors text-xs font-medium tracking-wide uppercase">Cronograma</a>
-                    <a href="#atracoes" class="text-gray-300 hover:text-gold-400 transition-colors text-xs font-medium tracking-wide uppercase">Atrações</a>
-                    <a href="#cardapio" class="text-gray-300 hover:text-gold-400 transition-colors text-xs font-medium tracking-wide uppercase">Cardápio & Open</a>
-                    <a href="#instrucoes" class="text-gray-300 hover:text-gold-400 transition-colors text-xs font-medium tracking-wide uppercase">Instruções</a>
-                    <a href="#playlists" class="text-gray-300 hover:text-gold-400 transition-colors text-xs font-medium tracking-wide uppercase">Playlists</a>
+                    <a href="#cronograma" class="text-gray-300 hover:text-brand-400 transition-colors text-xs font-medium tracking-wide uppercase">Cronograma</a>
+                    <a href="#atracoes" class="text-gray-300 hover:text-brand-400 transition-colors text-xs font-medium tracking-wide uppercase">Atrações</a>
+                    <a href="#openbar" class="text-gray-300 hover:text-brand-400 transition-colors text-xs font-medium tracking-wide uppercase">Open Bar</a>
+                    <a href="#traje" class="text-gray-300 hover:text-brand-400 transition-colors text-xs font-medium tracking-wide uppercase">Traje</a>
+                    <a href="https://viola-25.github.io/xxviii/" target="_blank" rel="noopener" class="text-gray-300 hover:text-brand-400 transition-colors text-xs font-medium tracking-wide uppercase">Estudantes</a>
+                    <a href="#familia" class="text-gray-300 hover:text-brand-400 transition-colors text-xs font-medium tracking-wide uppercase">Família</a>
+                    <a href="https://www.instagram.com/medscxxviii/" target="_blank" rel="noopener" class="inline-flex items-center gap-2 bg-brand-600 hover:bg-brand-500 text-white text-xs font-bold uppercase tracking-wide px-4 py-2 rounded-full transition-colors">
+                        <i class="ph-fill ph-instagram-logo"></i> @medscxxviii
+                    </a>
                 </div>
                 <!-- Botão Mobile -->
                 <div class="lg:hidden flex items-center">
-                    <button id="mobile-menu-btn" class="text-white hover:text-gold-400 focus:outline-none p-2">
+                    <button id="mobile-menu-btn" class="text-white hover:text-brand-400 focus:outline-none p-2">
                         <i class="ph ph-list text-3xl"></i>
                     </button>
                 </div>
@@ -120,60 +133,69 @@
         <!-- Menu Mobile -->
         <div id="mobile-menu" class="hidden lg:hidden glass-nav border-t border-white/10">
             <div class="px-4 pt-2 pb-6 space-y-2 flex flex-col">
-                <a href="#cronograma" class="text-gray-300 hover:text-gold-400 block py-3 border-b border-white/5 text-sm font-medium uppercase tracking-wider">Cronograma</a>
-                <a href="#atracoes" class="text-gray-300 hover:text-gold-400 block py-3 border-b border-white/5 text-sm font-medium uppercase tracking-wider">Atrações</a>
-                <a href="#cardapio" class="text-gray-300 hover:text-gold-400 block py-3 border-b border-white/5 text-sm font-medium uppercase tracking-wider">Cardápio & Open</a>
-                <a href="#instrucoes" class="text-gray-300 hover:text-gold-400 block py-3 border-b border-white/5 text-sm font-medium uppercase tracking-wider">Instruções</a>
-                <a href="#playlists" class="text-gray-300 hover:text-gold-400 block py-3 text-sm font-medium uppercase tracking-wider">Playlists</a>
+                <a href="#cronograma" class="text-gray-300 hover:text-brand-400 block py-3 border-b border-white/5 text-sm font-medium uppercase tracking-wider">Cronograma</a>
+                <a href="#atracoes" class="text-gray-300 hover:text-brand-400 block py-3 border-b border-white/5 text-sm font-medium uppercase tracking-wider">Atrações</a>
+                <a href="#openbar" class="text-gray-300 hover:text-brand-400 block py-3 border-b border-white/5 text-sm font-medium uppercase tracking-wider">Open Bar</a>
+                <a href="#traje" class="text-gray-300 hover:text-brand-400 block py-3 border-b border-white/5 text-sm font-medium uppercase tracking-wider">Traje</a>
+                <a href="https://viola-25.github.io/xxviii/" target="_blank" rel="noopener" class="text-gray-300 hover:text-brand-400 block py-3 border-b border-white/5 text-sm font-medium uppercase tracking-wider">Estudantes</a>
+                <a href="#familia" class="text-gray-300 hover:text-brand-400 block py-3 border-b border-white/5 text-sm font-medium uppercase tracking-wider">Família</a>
+                <a href="https://www.instagram.com/medscxxviii/" target="_blank" rel="noopener" class="text-brand-400 block py-3 text-sm font-medium uppercase tracking-wider">Instagram</a>
             </div>
         </div>
     </nav>
 
     <!-- Hero & Countdown -->
     <section class="relative min-h-[90vh] flex flex-col items-center justify-center bg-brand-900 overflow-hidden pt-20">
-        <!-- Background Imagem + Overlay -->
+        <!-- Background -->
         <div class="absolute inset-0 z-0">
-            <img src="https://placehold.co/1920x1080/0f172a/1e293b?text=Foto+da+Turma" alt="Fundo" class="w-full h-full object-cover opacity-40 mix-blend-overlay">
-            <div class="absolute inset-0 bg-gradient-to-t from-brand-900 via-brand-900/80 to-brand-900/40"></div>
-            <div class="absolute inset-0 bg-pattern opacity-30"></div>
+            <div class="absolute inset-0 bg-gradient-to-t from-brand-900 via-brand-900/85 to-brand-900/50"></div>
+            <div class="absolute top-1/4 left-1/2 -translate-x-1/2 w-[40rem] h-[40rem] rounded-full bg-brand-600/25 blur-3xl"></div>
+            <div class="absolute inset-0 bg-pattern opacity-40"></div>
         </div>
 
         <div class="relative z-10 text-center px-6 max-w-5xl mx-auto w-full">
             <div class="animate-slide-up">
-                <span class="text-gold-400 font-sans tracking-[0.4em] uppercase text-xs md:text-sm font-semibold mb-4 block">O Grande Dia Chegou</span>
-                <h1 class="font-serif text-5xl md:text-7xl lg:text-8xl text-white font-bold leading-tight mb-6">
-                    Formatura <br/>
-                    <span class="text-transparent bg-clip-text bg-gradient-to-r from-gold-300 to-gold-600">Turma 2026</span>
+                <img src="Brasão-09.png" alt="Brasão da Turma XXVIII" class="w-36 md:w-44 h-auto object-contain drop-shadow-[0_10px_30px_rgba(0,0,0,0.6)] mx-auto mb-8">
+                <span class="text-brand-400 font-sans tracking-[0.4em] uppercase text-xs md:text-sm font-semibold mb-4 block">Centro Universitário São Camilo · São Paulo/SP</span>
+                <h1 class="font-serif text-5xl md:text-7xl lg:text-8xl text-white font-bold leading-tight mb-3">
+                    Medicina
+                    <span class="text-transparent bg-clip-text bg-gradient-to-r from-brand-300 to-brand-600">Turma XXVIII</span>
                 </h1>
+                <span class="inline-block bg-white/10 border border-brand-500/40 text-brand-300 text-sm md:text-base font-semibold tracking-widest uppercase px-5 py-2 rounded-full mb-8">
+                    "Rumo ao CRM"
+                </span>
                 <p class="text-gray-300 text-lg md:text-xl max-w-2xl mx-auto font-light mb-12">
-                    Comissão de Formatura convida familiares e amigos para celebrarmos juntos o fim desta jornada épica.
+                    A Comissão de Formatura convida pais, familiares e amigos a acompanharem os próximos capítulos dessa jornada — das cerimônias às grandes festas. Aqui você encontra todo o cronograma e as orientações.
                 </p>
             </div>
 
-            <!-- Contagem Regressiva UI -->
+            <!-- Contagem Regressiva: Colação de Grau -->
+            <div class="text-center mb-6 animate-slide-up" style="animation-delay: 0.15s;">
+                <span class="text-xs uppercase tracking-widest text-gray-400 font-medium">Contagem regressiva para a Colação de Grau</span>
+            </div>
             <div class="grid grid-cols-4 gap-2 md:gap-6 max-w-3xl mx-auto animate-slide-up" style="animation-delay: 0.2s;">
                 <div class="bg-white/5 backdrop-blur-md border border-white/10 rounded-2xl p-3 md:p-6 text-center">
                     <span id="dias" class="block text-3xl md:text-5xl font-serif font-bold text-white mb-1">00</span>
-                    <span class="text-[10px] md:text-xs uppercase tracking-widest text-gold-400 font-medium">Dias</span>
+                    <span class="text-[10px] md:text-xs uppercase tracking-widest text-brand-400 font-medium">Dias</span>
                 </div>
                 <div class="bg-white/5 backdrop-blur-md border border-white/10 rounded-2xl p-3 md:p-6 text-center">
                     <span id="horas" class="block text-3xl md:text-5xl font-serif font-bold text-white mb-1">00</span>
-                    <span class="text-[10px] md:text-xs uppercase tracking-widest text-gold-400 font-medium">Horas</span>
+                    <span class="text-[10px] md:text-xs uppercase tracking-widest text-brand-400 font-medium">Horas</span>
                 </div>
                 <div class="bg-white/5 backdrop-blur-md border border-white/10 rounded-2xl p-3 md:p-6 text-center">
                     <span id="minutos" class="block text-3xl md:text-5xl font-serif font-bold text-white mb-1">00</span>
-                    <span class="text-[10px] md:text-xs uppercase tracking-widest text-gold-400 font-medium">Minutos</span>
+                    <span class="text-[10px] md:text-xs uppercase tracking-widest text-brand-400 font-medium">Minutos</span>
                 </div>
                 <div class="bg-white/5 backdrop-blur-md border border-white/10 rounded-2xl p-3 md:p-6 text-center">
                     <span id="segundos" class="block text-3xl md:text-5xl font-serif font-bold text-white mb-1">00</span>
-                    <span class="text-[10px] md:text-xs uppercase tracking-widest text-gold-400 font-medium">Segundos</span>
+                    <span class="text-[10px] md:text-xs uppercase tracking-widest text-brand-400 font-medium">Segundos</span>
                 </div>
             </div>
-            
+
             <!-- Rolagem -->
             <div class="mt-16 text-gray-400 flex flex-col items-center animate-slide-up" style="animation-delay: 0.4s;">
                 <span class="text-xs uppercase tracking-widest mb-3">Deslize para ver tudo</span>
-                <i class="ph ph-arrow-down animate-bounce text-2xl text-gold-500"></i>
+                <i class="ph ph-arrow-down animate-bounce text-2xl text-brand-500"></i>
             </div>
         </div>
     </section>
@@ -182,60 +204,143 @@
     <section id="cronograma" class="py-24 bg-white relative">
         <div class="max-w-6xl mx-auto px-6">
             <div class="text-center mb-16 reveal">
-                <span class="text-gold-600 font-bold tracking-widest uppercase text-sm">Agenda Oficial</span>
+                <span class="text-brand-600 font-bold tracking-widest uppercase text-sm">Agenda Oficial</span>
                 <h2 class="font-serif text-4xl md:text-5xl text-brand-900 font-bold mt-2">Cronograma de Eventos</h2>
+                <p class="text-slate-500 mt-4 max-w-2xl mx-auto">Os próximos eventos da Turma XXVIII. Marque na agenda e não perca nenhum momento.</p>
             </div>
 
-            <div class="relative">
-                <!-- Linha do tempo (visível apenas desktop) -->
-                <div class="hidden md:block absolute left-1/2 transform -translate-x-1/2 w-0.5 h-full bg-gold-200"></div>
-
-                <div class="space-y-12">
-                    <!-- Evento 1 -->
-                    <div class="relative flex flex-col md:flex-row items-center justify-between group reveal">
-                        <div class="md:w-5/12 mb-6 md:mb-0 text-center md:text-right pr-0 md:pr-10">
-                            <h3 class="font-serif text-2xl font-bold text-brand-900">Missa & Culto Ecumênico</h3>
-                            <p class="text-gold-600 font-semibold mb-2">12 de Dezembro • 19h00</p>
-                            <p class="text-slate-600">Um momento de gratidão. Traje esporte fino. Entrada gratuita para todos os convidados.</p>
-                            <p class="text-sm font-medium mt-3"><i class="ph-fill ph-map-pin text-gold-500"></i> Catedral da Cidade</p>
-                        </div>
-                        <div class="hidden md:flex absolute left-1/2 transform -translate-x-1/2 w-12 h-12 rounded-full bg-brand-900 border-4 border-white items-center justify-center z-10 shadow-lg group-hover:scale-110 transition-transform">
-                            <i class="ph-fill ph-church text-gold-400 text-xl"></i>
-                        </div>
-                        <div class="md:w-5/12 pl-0 md:pl-10">
-                            <img src="https://placehold.co/600x400/f8fafc/cbd5e1?text=Local+da+Missa" alt="Missa" class="rounded-2xl shadow-md w-full object-cover h-48">
+            <div class="space-y-16">
+                <!-- Cerimônias -->
+                <div class="reveal">
+                    <div class="flex items-center gap-4 mb-8">
+                        <span class="flex-shrink-0 w-12 h-12 rounded-full bg-brand-900 flex items-center justify-center shadow-lg">
+                            <i class="ph-fill ph-graduation-cap text-brand-400 text-xl"></i>
+                        </span>
+                        <div>
+                            <h3 class="font-serif text-2xl md:text-3xl font-bold text-brand-900">Cerimônias Oficiais</h3>
+                            <p class="text-slate-500 text-sm">Outubro de 2026 — o grande momento</p>
                         </div>
                     </div>
 
-                    <!-- Evento 2 -->
-                    <div class="relative flex flex-col md:flex-row-reverse items-center justify-between group reveal">
-                        <div class="md:w-5/12 mb-6 md:mb-0 text-center md:text-left pl-0 md:pl-10">
-                            <h3 class="font-serif text-2xl font-bold text-brand-900">Colação de Grau</h3>
-                            <p class="text-gold-600 font-semibold mb-2">13 de Dezembro • 20h00</p>
-                            <p class="text-slate-600">A cerimônia oficial de entrega dos canudos. Exige-se apresentação de convite individual.</p>
-                            <p class="text-sm font-medium mt-3"><i class="ph-fill ph-map-pin text-gold-500"></i> Centro de Convenções - Auditório A</p>
+                    <div class="grid md:grid-cols-2 gap-6">
+                        <div class="bg-brand-50 border border-slate-200 rounded-2xl p-6 flex gap-5 items-start hover:shadow-md transition-shadow">
+                            <div class="w-16 shrink-0 text-center bg-brand-900 rounded-xl py-3 text-white">
+                                <span class="block text-2xl font-serif font-bold">06</span>
+                                <span class="block text-[10px] text-brand-400 font-semibold uppercase tracking-widest">Out · Ter</span>
+                            </div>
+                            <div>
+                                <div class="flex flex-wrap items-center gap-2 mb-1">
+                                    <h4 class="font-serif text-xl font-bold text-brand-900">Colação de Grau</h4>
+                                    <span class="bg-brand-900 text-brand-400 text-[10px] font-bold px-2 py-0.5 rounded-full uppercase tracking-wider">Todos</span>
+                                </div>
+                                <p class="text-slate-600 text-sm"><i class="ph-fill ph-clock text-brand-500"></i> 18h30</p>
+                                <p class="text-slate-600 text-sm"><i class="ph-fill ph-map-pin text-brand-500"></i> Sala São Paulo</p>
+                                <div class="flex flex-wrap gap-2 mt-4">
+                                    <a href="https://www.google.com/maps/dir/?api=1&destination=Sala+S%C3%A3o+Paulo+SP" target="_blank" rel="noopener" class="inline-flex items-center gap-1.5 text-[11px] font-bold uppercase tracking-wide bg-brand-600 text-white px-3 py-1.5 rounded-full hover:bg-brand-500 transition-colors">
+                                        <i class="ph-fill ph-map-pin text-sm"></i> Maps
+                                    </a>
+                                    <a href="https://waze.com/ul?q=Sala%20S%C3%A3o%20Paulo%20SP&navigate=yes" target="_blank" rel="noopener" class="inline-flex items-center gap-1.5 text-[11px] font-bold uppercase tracking-wide bg-blue-600 text-white px-3 py-1.5 rounded-full hover:bg-blue-500 transition-colors">
+                                        <i class="ph-fill ph-navigation-arrow text-sm"></i> Waze
+                                    </a>
+                                    <button type="button" onclick="adicionarAgenda('Colação de Grau — Turma XXVIII Medicina São Camilo','Sala São Paulo — São Paulo/SP','20261006T183000','20261006T203000')" class="inline-flex items-center gap-1.5 text-[11px] font-bold uppercase tracking-wide bg-slate-700 text-white px-3 py-1.5 rounded-full hover:bg-slate-600 transition-colors cursor-pointer">
+                                        <i class="ph-fill ph-calendar-plus text-sm"></i> Agenda
+                                    </button>
+                                </div>
+                            </div>
                         </div>
-                        <div class="hidden md:flex absolute left-1/2 transform -translate-x-1/2 w-12 h-12 rounded-full bg-brand-900 border-4 border-white items-center justify-center z-10 shadow-lg group-hover:scale-110 transition-transform">
-                            <i class="ph-fill ph-graduation-cap text-gold-400 text-xl"></i>
+
+                        <div class="bg-brand-50 border border-slate-200 rounded-2xl p-6 flex gap-5 items-start hover:shadow-md transition-shadow">
+                            <div class="w-16 shrink-0 text-center bg-brand-900 rounded-xl py-3 text-white">
+                                <span class="block text-2xl font-serif font-bold">07</span>
+                                <span class="block text-[10px] text-brand-400 font-semibold uppercase tracking-widest">Out · Qua</span>
+                            </div>
+                            <div>
+                                <div class="flex flex-wrap items-center gap-2 mb-1">
+                                    <h4 class="font-serif text-xl font-bold text-brand-900">Culto Ecumênico</h4>
+                                    <span class="bg-brand-900 text-brand-400 text-[10px] font-bold px-2 py-0.5 rounded-full uppercase tracking-wider">Todos</span>
+                                </div>
+                                <p class="text-slate-600 text-sm"><i class="ph-fill ph-clock text-brand-500"></i> 14h00</p>
+                                <p class="text-slate-600 text-sm"><i class="ph-fill ph-map-pin text-brand-500"></i> Catedral da Sé</p>
+                                <div class="flex flex-wrap gap-2 mt-4">
+                                    <a href="https://www.google.com/maps/dir/?api=1&destination=Catedral+da+S%C3%A9+SP" target="_blank" rel="noopener" class="inline-flex items-center gap-1.5 text-[11px] font-bold uppercase tracking-wide bg-brand-600 text-white px-3 py-1.5 rounded-full hover:bg-brand-500 transition-colors">
+                                        <i class="ph-fill ph-map-pin text-sm"></i> Maps
+                                    </a>
+                                    <a href="https://waze.com/ul?q=Catedral%20da%20S%C3%A9%20SP&navigate=yes" target="_blank" rel="noopener" class="inline-flex items-center gap-1.5 text-[11px] font-bold uppercase tracking-wide bg-blue-600 text-white px-3 py-1.5 rounded-full hover:bg-blue-500 transition-colors">
+                                        <i class="ph-fill ph-navigation-arrow text-sm"></i> Waze
+                                    </a>
+                                    <button type="button" onclick="adicionarAgenda('Culto Ecumênico — Turma XXVIII Medicina São Camilo','Catedral da Sé — São Paulo/SP','20261007T140000','20261007T160000')" class="inline-flex items-center gap-1.5 text-[11px] font-bold uppercase tracking-wide bg-slate-700 text-white px-3 py-1.5 rounded-full hover:bg-slate-600 transition-colors cursor-pointer">
+                                        <i class="ph-fill ph-calendar-plus text-sm"></i> Agenda
+                                    </button>
+                                </div>
+                            </div>
                         </div>
-                        <div class="md:w-5/12 pr-0 md:pr-10">
-                            <img src="https://placehold.co/600x400/f8fafc/cbd5e1?text=Palco+da+Colacao" alt="Colação" class="rounded-2xl shadow-md w-full object-cover h-48">
+                    </div>
+                </div>
+
+                <!-- Festas -->
+                <div class="reveal">
+                    <div class="flex items-center gap-4 mb-8">
+                        <span class="flex-shrink-0 w-12 h-12 rounded-full bg-brand-500 flex items-center justify-center shadow-lg">
+                            <i class="ph-fill ph-confetti text-white text-xl"></i>
+                        </span>
+                        <div>
+                            <h3 class="font-serif text-2xl md:text-3xl font-bold text-brand-900">Festas</h3>
+                            <p class="text-slate-500 text-sm">Outubro de 2026 — a celebração</p>
                         </div>
                     </div>
 
-                    <!-- Evento 3 -->
-                    <div class="relative flex flex-col md:flex-row items-center justify-between group reveal">
-                        <div class="md:w-5/12 mb-6 md:mb-0 text-center md:text-right pr-0 md:pr-10">
-                            <h3 class="font-serif text-2xl font-bold text-brand-900">Jantar & Baile de Gala</h3>
-                            <p class="text-gold-600 font-semibold mb-2">15 de Dezembro • 22h00 às 06h00</p>
-                            <p class="text-slate-600">A grande festa! Jantar servido até 01h, seguido de 5 horas de muita festa com open bar premium.</p>
-                            <p class="text-sm font-medium mt-3"><i class="ph-fill ph-map-pin text-gold-500"></i> Pavilhão de Exposições</p>
+                    <div class="grid md:grid-cols-2 gap-6">
+                        <div class="bg-brand-50 border border-slate-200 rounded-2xl p-6 flex gap-5 items-start hover:shadow-md transition-shadow">
+                            <div class="w-16 shrink-0 text-center bg-brand-900 rounded-xl py-3 text-white">
+                                <span class="block text-2xl font-serif font-bold">08</span>
+                                <span class="block text-[10px] text-brand-400 font-semibold uppercase tracking-widest">Out · Qui</span>
+                            </div>
+                            <div>
+                                <div class="flex flex-wrap items-center gap-2 mb-1">
+                                    <h4 class="font-serif text-xl font-bold text-brand-900">Jantar de Formatura</h4>
+                                    <span class="bg-brand-900 text-brand-400 text-[10px] font-bold px-2 py-0.5 rounded-full uppercase tracking-wider">Gala</span>
+                                </div>
+                                <p class="text-slate-600 text-sm"><i class="ph-fill ph-clock text-brand-500"></i> 21h00</p>
+                                <p class="text-slate-600 text-sm"><i class="ph-fill ph-map-pin text-brand-500"></i> ProMagno</p>
+                                <div class="flex flex-wrap gap-2 mt-4">
+                                    <a href="https://www.google.com/maps/dir/?api=1&destination=ProMagno+S%C3%A3o+Paulo+SP" target="_blank" rel="noopener" class="inline-flex items-center gap-1.5 text-[11px] font-bold uppercase tracking-wide bg-brand-600 text-white px-3 py-1.5 rounded-full hover:bg-brand-500 transition-colors">
+                                        <i class="ph-fill ph-map-pin text-sm"></i> Maps
+                                    </a>
+                                    <a href="https://waze.com/ul?q=ProMagno%20S%C3%A3o%20Paulo%20SP&navigate=yes" target="_blank" rel="noopener" class="inline-flex items-center gap-1.5 text-[11px] font-bold uppercase tracking-wide bg-blue-600 text-white px-3 py-1.5 rounded-full hover:bg-blue-500 transition-colors">
+                                        <i class="ph-fill ph-navigation-arrow text-sm"></i> Waze
+                                    </a>
+                                    <button type="button" onclick="adicionarAgenda('Jantar de Formatura — Turma XXVIII Medicina São Camilo','ProMagno — São Paulo/SP','20261008T210000','20261009T010000')" class="inline-flex items-center gap-1.5 text-[11px] font-bold uppercase tracking-wide bg-slate-700 text-white px-3 py-1.5 rounded-full hover:bg-slate-600 transition-colors cursor-pointer">
+                                        <i class="ph-fill ph-calendar-plus text-sm"></i> Agenda
+                                    </button>
+                                </div>
+                            </div>
                         </div>
-                        <div class="hidden md:flex absolute left-1/2 transform -translate-x-1/2 w-12 h-12 rounded-full bg-gold-500 border-4 border-white items-center justify-center z-10 shadow-lg group-hover:scale-110 transition-transform">
-                            <i class="ph-fill ph-confetti text-brand-900 text-xl"></i>
-                        </div>
-                        <div class="md:w-5/12 pl-0 md:pl-10">
-                            <img src="https://placehold.co/600x400/f8fafc/cbd5e1?text=Decoracao+do+Baile" alt="Baile" class="rounded-2xl shadow-md w-full object-cover h-48">
+
+                        <div class="bg-brand-900 rounded-2xl p-6 flex gap-5 items-start shadow-xl shadow-brand-900/20">
+                            <div class="w-16 shrink-0 text-center bg-white/10 rounded-xl py-3 text-white border border-white/10">
+                                <span class="block text-2xl font-serif font-bold text-brand-400">10</span>
+                                <span class="block text-[10px] text-brand-400 font-semibold uppercase tracking-widest">Out · Sáb</span>
+                            </div>
+                            <div>
+                                <div class="flex flex-wrap items-center gap-2 mb-1">
+                                    <h4 class="font-serif text-xl font-bold text-white">Baile de Formatura</h4>
+                                    <span class="bg-brand-500 text-white text-[10px] font-bold px-2 py-0.5 rounded-full uppercase tracking-wider">Gala</span>
+                                </div>
+                                <p class="text-slate-300 text-sm"><i class="ph-fill ph-clock text-brand-500"></i> 22h00</p>
+                                <p class="text-slate-300 text-sm"><i class="ph-fill ph-map-pin text-brand-500"></i> ProMagno</p>
+                                <div class="flex flex-wrap gap-2 mt-4">
+                                    <a href="https://www.google.com/maps/dir/?api=1&destination=ProMagno+S%C3%A3o+Paulo+SP" target="_blank" rel="noopener" class="inline-flex items-center gap-1.5 text-[11px] font-bold uppercase tracking-wide bg-brand-500 text-white px-3 py-1.5 rounded-full hover:bg-brand-400 transition-colors">
+                                        <i class="ph-fill ph-map-pin text-sm"></i> Maps
+                                    </a>
+                                    <a href="https://waze.com/ul?q=ProMagno%20S%C3%A3o%20Paulo%20SP&navigate=yes" target="_blank" rel="noopener" class="inline-flex items-center gap-1.5 text-[11px] font-bold uppercase tracking-wide bg-blue-500 text-white px-3 py-1.5 rounded-full hover:bg-blue-400 transition-colors">
+                                        <i class="ph-fill ph-navigation-arrow text-sm"></i> Waze
+                                    </a>
+                                    <button type="button" onclick="adicionarAgenda('Baile de Formatura — Turma XXVIII Medicina São Camilo','ProMagno — São Paulo/SP','20261010T220000','20261011T040000')" class="inline-flex items-center gap-1.5 text-[11px] font-bold uppercase tracking-wide bg-white/15 text-white px-3 py-1.5 rounded-full hover:bg-white/25 transition-colors cursor-pointer">
+                                        <i class="ph-fill ph-calendar-plus text-sm"></i> Agenda
+                                    </button>
+                                </div>
+                                <p class="text-slate-400 text-xs mt-3">A grande festa da turma para encerrar essa jornada.</p>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -247,145 +352,382 @@
     <section id="atracoes" class="py-24 bg-brand-50 border-t border-slate-200">
         <div class="max-w-7xl mx-auto px-6">
             <div class="text-center mb-16 reveal">
-                <h2 class="font-serif text-4xl md:text-5xl text-brand-900 font-bold mb-4">Line-up & Atrações</h2>
-                <p class="text-slate-500 max-w-2xl mx-auto">Preparamos atrações incríveis para não deixar ninguém parado no Baile de Gala.</p>
+                <span class="text-brand-600 font-bold tracking-widest uppercase text-sm">Line-up</span>
+                <h2 class="font-serif text-4xl md:text-5xl text-brand-900 font-bold mt-2">Atrações Confirmadas</h2>
+                <p class="text-slate-500 mt-4 max-w-2xl mx-auto">Os artistas que vão animar as festas da Turma XXVIII. Novidades em breve!</p>
             </div>
 
-            <div class="grid md:grid-cols-3 gap-8">
-                <!-- Banda 1 -->
-                <div class="bg-white rounded-[2rem] overflow-hidden shadow-xl shadow-slate-200/50 group reveal">
-                    <div class="relative h-64 overflow-hidden">
-                        <img src="https://placehold.co/800x600/1e293b/facc15?text=Banda+Baile" alt="Banda de Baile" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
-                        <div class="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent"></div>
-                        <div class="absolute bottom-4 left-6 text-white">
-                            <span class="bg-gold-500 text-brand-900 text-xs font-bold px-3 py-1 rounded-full uppercase tracking-wider mb-2 inline-block">23h00 - 02h00</span>
-                            <h3 class="font-serif text-2xl font-bold">Banda Show Master</h3>
+            <div class="grid md:grid-cols-2 gap-8">
+                <!-- Jantar -->
+                <div class="bg-white rounded-3xl border border-slate-200 p-8 md:p-10 shadow-sm reveal">
+                    <div class="flex items-center gap-4 mb-8 border-b border-slate-100 pb-6">
+                        <div class="w-14 h-14 rounded-full bg-brand-500/20 text-brand-600 flex items-center justify-center shrink-0">
+                            <i class="ph-fill ph-fork-knife text-3xl"></i>
+                        </div>
+                        <div>
+                            <h3 class="font-serif text-2xl md:text-3xl font-bold text-brand-900">Jantar de Formatura</h3>
+                            <p class="text-brand-600 font-semibold text-sm mt-1">08 de Outubro · 21h00 · ProMagno</p>
                         </div>
                     </div>
-                    <div class="p-6">
-                        <p class="text-slate-600 text-sm">Para abrir a pista com classe! Repertório eclético passando pelos maiores sucessos de todas as décadas, valsa dos formandos e ritmos variados.</p>
+
+                    <div class="grid sm:grid-cols-2 gap-4">
+                        <figure onclick="abrirPlaylist('Fun7','7JIh41yfkrydDs4yDsgrnT')" onkeydown="if(event.key==='Enter')abrirPlaylist('Fun7','7JIh41yfkrydDs4yDsgrnT')" role="button" tabindex="0" class="relative rounded-2xl overflow-hidden group cursor-pointer">
+                            <img src="atrações/fun7.jpg" alt="Fun7" class="w-full h-44 object-cover object-top group-hover:scale-105 transition-transform duration-500">
+                            <div class="absolute inset-0 bg-gradient-to-t from-brand-900/95 via-brand-900/20 to-transparent"></div>
+                            <div class="absolute inset-0 flex items-center justify-center bg-brand-900/0 group-hover:bg-brand-900/40 transition-colors">
+                                <div class="w-12 h-12 bg-green-500 rounded-full flex items-center justify-center shadow-lg opacity-0 group-hover:opacity-100 transition-opacity duration-300 scale-75 group-hover:scale-100">
+                                    <i class="ph-fill ph-play text-black text-xl ml-1"></i>
+                                </div>
+                            </div>
+                            <figcaption class="absolute bottom-0 left-0 right-0 p-4">
+                                <span class="text-[10px] uppercase tracking-widest text-brand-200 font-bold">Jantar</span>
+                                <h4 class="font-serif text-lg font-bold text-white">Fun7</h4>
+                            </figcaption>
+                        </figure>
+                        <figure onclick="abrirPlaylist('Bonde do Tigrão','3TjvtCJemrUSI8cyThTNl5')" onkeydown="if(event.key==='Enter')abrirPlaylist('Bonde do Tigrão','3TjvtCJemrUSI8cyThTNl5')" role="button" tabindex="0" class="relative rounded-2xl overflow-hidden group cursor-pointer">
+                            <img src="atrações/bondedotigrao.jfif" alt="Bonde do Tigrão" class="w-full h-44 object-cover object-top group-hover:scale-105 transition-transform duration-500">
+                            <div class="absolute inset-0 bg-gradient-to-t from-brand-900/95 via-brand-900/20 to-transparent"></div>
+                            <div class="absolute inset-0 flex items-center justify-center bg-brand-900/0 group-hover:bg-brand-900/40 transition-colors">
+                                <div class="w-12 h-12 bg-green-500 rounded-full flex items-center justify-center shadow-lg opacity-0 group-hover:opacity-100 transition-opacity duration-300 scale-75 group-hover:scale-100">
+                                    <i class="ph-fill ph-play text-black text-xl ml-1"></i>
+                                </div>
+                            </div>
+                            <figcaption class="absolute bottom-0 left-0 right-0 p-4">
+                                <span class="text-[10px] uppercase tracking-widest text-brand-200 font-bold">Jantar</span>
+                                <h4 class="font-serif text-lg font-bold text-white">Bonde do Tigrão</h4>
+                            </figcaption>
+                        </figure>
+                    </div>
+
+                    <p class="mt-5 text-xs text-slate-500 flex items-center gap-2">
+                        <i class="ph-fill ph-spotify-logo text-green-500 text-base"></i>
+                        Clique na atração para ouvir a playlist oficial
+                    </p>
+                </div>
+
+                <!-- Baile -->
+                <div class="bg-brand-900 rounded-3xl p-8 md:p-10 shadow-xl shadow-brand-900/20 reveal" style="transition-delay: 100ms;">
+                    <div class="flex items-center gap-4 mb-8 border-b border-white/10 pb-6">
+                        <div class="w-14 h-14 rounded-full bg-brand-500/20 text-brand-400 flex items-center justify-center shrink-0">
+                            <i class="ph-fill ph-confetti text-3xl"></i>
+                        </div>
+                        <div>
+                            <h3 class="font-serif text-2xl md:text-3xl font-bold text-white">Baile de Formatura</h3>
+                            <p class="text-brand-400 font-semibold text-sm mt-1">10 de Outubro · 22h00 · ProMagno</p>
+                        </div>
+                    </div>
+
+                    <div class="grid sm:grid-cols-2 gap-4">
+                        <figure onclick="abrirPlaylist('Matheus Henrique e Gabriel','1PPrSgxjGGSfIen1NSnl1y')" onkeydown="if(event.key==='Enter')abrirPlaylist('Matheus Henrique e Gabriel','1PPrSgxjGGSfIen1NSnl1y')" role="button" tabindex="0" class="relative rounded-2xl overflow-hidden group cursor-pointer sm:col-span-2">
+                            <img src="atrações/mheg.webp" alt="Matheus Henrique e Gabriel" class="w-full h-52 object-cover object-top group-hover:scale-105 transition-transform duration-500">
+                            <div class="absolute inset-0 bg-gradient-to-t from-brand-900/95 via-brand-900/20 to-transparent"></div>
+                            <div class="absolute inset-0 flex items-center justify-center bg-brand-900/0 group-hover:bg-brand-900/40 transition-colors">
+                                <div class="w-12 h-12 bg-green-500 rounded-full flex items-center justify-center shadow-lg opacity-0 group-hover:opacity-100 transition-opacity duration-300 scale-75 group-hover:scale-100">
+                                    <i class="ph-fill ph-play text-black text-xl ml-1"></i>
+                                </div>
+                            </div>
+                            <figcaption class="absolute bottom-0 left-0 right-0 p-4">
+                                <span class="text-[10px] uppercase tracking-widest text-brand-200 font-bold">Baile</span>
+                                <h4 class="font-serif text-lg font-bold text-white">Matheus Henrique e Gabriel</h4>
+                            </figcaption>
+                        </figure>
+                        <figure onclick="abrirPlaylist('Pagode do Chuvisco','7588qUXD3NTSWL3ivLAhNz')" onkeydown="if(event.key==='Enter')abrirPlaylist('Pagode do Chuvisco','7588qUXD3NTSWL3ivLAhNz')" role="button" tabindex="0" class="relative rounded-2xl overflow-hidden group cursor-pointer">
+                            <img src="atrações/chuvisco.jfif" alt="Pagode do Chuvisco" class="w-full h-44 object-cover object-top group-hover:scale-105 transition-transform duration-500">
+                            <div class="absolute inset-0 bg-gradient-to-t from-brand-900/95 via-brand-900/20 to-transparent"></div>
+                            <div class="absolute inset-0 flex items-center justify-center bg-brand-900/0 group-hover:bg-brand-900/40 transition-colors">
+                                <div class="w-12 h-12 bg-green-500 rounded-full flex items-center justify-center shadow-lg opacity-0 group-hover:opacity-100 transition-opacity duration-300 scale-75 group-hover:scale-100">
+                                    <i class="ph-fill ph-play text-black text-xl ml-1"></i>
+                                </div>
+                            </div>
+                            <figcaption class="absolute bottom-0 left-0 right-0 p-4">
+                                <span class="text-[10px] uppercase tracking-widest text-brand-200 font-bold">Baile</span>
+                                <h4 class="font-serif text-lg font-bold text-white">Pagode do Chuvisco</h4>
+                            </figcaption>
+                        </figure>
+                        <figure onclick="abrirPlaylist('Mc Lan','2hmeMagpJ6ru0hkCIKLbj2')" onkeydown="if(event.key==='Enter')abrirPlaylist('Mc Lan','2hmeMagpJ6ru0hkCIKLbj2')" role="button" tabindex="0" class="relative rounded-2xl overflow-hidden group cursor-pointer">
+                            <img src="atrações/mclan.webp" alt="Mc Lan" class="w-full h-44 object-cover object-top group-hover:scale-105 transition-transform duration-500">
+                            <div class="absolute inset-0 bg-gradient-to-t from-brand-900/95 via-brand-900/20 to-transparent"></div>
+                            <div class="absolute inset-0 flex items-center justify-center bg-brand-900/0 group-hover:bg-brand-900/40 transition-colors">
+                                <div class="w-12 h-12 bg-green-500 rounded-full flex items-center justify-center shadow-lg opacity-0 group-hover:opacity-100 transition-opacity duration-300 scale-75 group-hover:scale-100">
+                                    <i class="ph-fill ph-play text-black text-xl ml-1"></i>
+                                </div>
+                            </div>
+                            <figcaption class="absolute bottom-0 left-0 right-0 p-4">
+                                <span class="text-[10px] uppercase tracking-widest text-brand-200 font-bold">Baile</span>
+                                <h4 class="font-serif text-lg font-bold text-white">Mc Lan</h4>
+                            </figcaption>
+                        </figure>
+                    </div>
+
+                    <p class="mt-5 text-xs text-slate-400 flex items-center gap-2">
+                        <i class="ph-fill ph-spotify-logo text-green-500 text-base"></i>
+                        Clique na atração para ouvir a playlist oficial
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Open Bar das Festas -->
+    <section id="openbar" class="py-24 bg-white border-t border-slate-100">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="text-center mb-16 reveal">
+                <span class="text-brand-600 font-bold tracking-widest uppercase text-sm">Open Bar</span>
+                <h2 class="font-serif text-4xl md:text-5xl text-brand-900 font-bold mt-2">Bebidas das Festas</h2>
+                <p class="text-slate-500 mt-4 max-w-2xl mx-auto">Seleção de drinks do Jantar e do Baile de Formatura no ProMagno. Beba com moderação.</p>
+            </div>
+
+            <div class="grid lg:grid-cols-2 gap-8">
+                <!-- Jantar -->
+                <div class="bg-brand-50 border border-slate-200 rounded-3xl p-8 md:p-10 reveal">
+                    <div class="flex items-center gap-4 mb-8 border-b border-slate-200 pb-6">
+                        <div class="w-14 h-14 rounded-full bg-brand-500/20 text-brand-600 flex items-center justify-center shrink-0">
+                            <i class="ph-fill ph-fork-knife text-3xl"></i>
+                        </div>
+                        <div>
+                            <h3 class="font-serif text-2xl md:text-3xl font-bold text-brand-900">Jantar de Formatura</h3>
+                            <p class="text-brand-600 font-semibold text-sm mt-1">08 de Outubro · 21h00 · ProMagno</p>
+                        </div>
+                    </div>
+
+                    <div class="grid sm:grid-cols-2 gap-x-8 gap-y-6">
+                        <div>
+                            <h4 class="text-brand-600 font-bold uppercase tracking-wider text-sm mb-3">Vodkas</h4>
+                            <ul class="space-y-2 text-sm text-slate-600">
+                                <li>• Smirnoff</li>
+                                <li>• Wyborova</li>
+                                <li>• Absolut</li>
+                            </ul>
+                        </div>
+                        <div>
+                            <h4 class="text-brand-600 font-bold uppercase tracking-wider text-sm mb-3">Whiskys</h4>
+                            <ul class="space-y-2 text-sm text-slate-600">
+                                <li>• Red Label</li>
+                                <li>• Black Label</li>
+                                <li>• Jack Daniel's</li>
+                                <li>• Ballantines</li>
+                                <li>• Chivas</li>
+                            </ul>
+                        </div>
+                        <div>
+                            <h4 class="text-brand-600 font-bold uppercase tracking-wider text-sm mb-3">Gins</h4>
+                            <ul class="space-y-2 text-sm text-slate-600">
+                                <li>• Vitória Régia</li>
+                                <li>• Gordon's</li>
+                                <li>• Beefeater</li>
+                            </ul>
+                        </div>
+                        <div>
+                            <h4 class="text-brand-600 font-bold uppercase tracking-wider text-sm mb-3">Cervejas</h4>
+                            <ul class="space-y-2 text-sm text-slate-600">
+                                <li>• Stella</li>
+                                <li>• Budweiser</li>
+                                <li>• Original</li>
+                                <li>• Heineken</li>
+                            </ul>
+                        </div>
+                        <div>
+                            <h4 class="text-brand-600 font-bold uppercase tracking-wider text-sm mb-3">Especiais</h4>
+                            <ul class="space-y-2 text-sm text-slate-600">
+                                <li>• Aperol</li>
+                                <li>• Salton Brut</li>
+                                <li>• Licor de Triple Sec</li>
+                                <li>• Campari</li>
+                                <li>• Vermute</li>
+                                <li>• Clericot Salton Lunae</li>
+                            </ul>
+                        </div>
+                        <div>
+                            <h4 class="text-brand-600 font-bold uppercase tracking-wider text-sm mb-3">Energético & Mais</h4>
+                            <ul class="space-y-2 text-sm text-slate-600">
+                                <li>• Energético: Red Bull</li>
+                                <li>• Sakê: Azuma Kirin</li>
+                                <li>• Rum: Montilla Carta Branca</li>
+                                <li>• Cachaça: Sagatiba</li>
+                            </ul>
+                        </div>
                     </div>
                 </div>
 
-                <!-- Atração Nacional / Principal -->
-                <div class="bg-brand-900 rounded-[2rem] overflow-hidden shadow-2xl shadow-brand-900/20 transform md:-translate-y-4 group reveal" style="transition-delay: 100ms;">
-                    <div class="relative h-64 overflow-hidden">
-                        <img src="https://placehold.co/800x600/0f172a/facc15?text=Atracao+Principal" alt="Atração Principal" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
-                        <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/40 to-transparent"></div>
-                        <div class="absolute top-4 right-4 bg-gold-500 text-brand-900 w-12 h-12 rounded-full flex items-center justify-center font-bold shadow-lg">
-                            <i class="ph-fill ph-star text-2xl"></i>
+                <!-- Baile -->
+                <div class="bg-brand-900 rounded-3xl p-8 md:p-10 shadow-xl shadow-brand-900/20 reveal" style="transition-delay: 100ms;">
+                    <div class="flex items-center gap-4 mb-8 border-b border-white/10 pb-6">
+                        <div class="w-14 h-14 rounded-full bg-brand-500/20 text-brand-400 flex items-center justify-center shrink-0">
+                            <i class="ph-fill ph-confetti text-3xl"></i>
                         </div>
-                        <div class="absolute bottom-4 left-6 text-white">
-                            <span class="bg-white/20 backdrop-blur-sm text-white border border-white/30 text-xs font-bold px-3 py-1 rounded-full uppercase tracking-wider mb-2 inline-block">02h30 - 04h00</span>
-                            <h3 class="font-serif text-3xl font-bold text-gold-400">Cantor Sertanejo</h3>
+                        <div>
+                            <h3 class="font-serif text-2xl md:text-3xl font-bold text-white">Baile de Formatura</h3>
+                            <p class="text-brand-400 font-semibold text-sm mt-1">10 de Outubro · 22h00 · ProMagno</p>
                         </div>
                     </div>
-                    <div class="p-6">
-                        <p class="text-slate-300 text-sm">A atração mais aguardada da noite! O melhor do sertanejo universitário para cantar junto até perder a voz.</p>
-                    </div>
-                </div>
 
-                <!-- DJ / After -->
-                <div class="bg-white rounded-[2rem] overflow-hidden shadow-xl shadow-slate-200/50 group reveal" style="transition-delay: 200ms;">
-                    <div class="relative h-64 overflow-hidden">
-                        <img src="https://placehold.co/800x600/1e293b/facc15?text=DJ+Eletronica" alt="DJ" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
-                        <div class="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent"></div>
-                        <div class="absolute bottom-4 left-6 text-white">
-                            <span class="bg-purple-600 text-white text-xs font-bold px-3 py-1 rounded-full uppercase tracking-wider mb-2 inline-block">04h00 - 06h00</span>
-                            <h3 class="font-serif text-2xl font-bold">DJ Residente</h3>
+                    <div class="grid sm:grid-cols-2 gap-x-8 gap-y-6">
+                        <div>
+                            <h4 class="text-brand-400 font-bold uppercase tracking-wider text-sm mb-3">Vodkas</h4>
+                            <ul class="space-y-2 text-sm text-slate-300">
+                                <li>• Absolut</li>
+                                <li>• Ciroc</li>
+                                <li>• Grey Goose</li>
+                            </ul>
                         </div>
-                    </div>
-                    <div class="p-6">
-                        <p class="text-slate-600 text-sm">Para os inimigos do fim. Um set exclusivo de funk e música eletrônica acompanhado de café da manhã servido na pista.</p>
+                        <div>
+                            <h4 class="text-brand-400 font-bold uppercase tracking-wider text-sm mb-3">Whiskys</h4>
+                            <ul class="space-y-2 text-sm text-slate-300">
+                                <li>• Red Label</li>
+                                <li>• Black Label</li>
+                                <li>• Jack Daniel's</li>
+                                <li>• Ballantines</li>
+                            </ul>
+                        </div>
+                        <div>
+                            <h4 class="text-brand-400 font-bold uppercase tracking-wider text-sm mb-3">Cervejas</h4>
+                            <ul class="space-y-2 text-sm text-slate-300">
+                                <li>• Stella</li>
+                                <li>• Budweiser</li>
+                            </ul>
+                        </div>
+                        <div>
+                            <h4 class="text-brand-400 font-bold uppercase tracking-wider text-sm mb-3">Gins & Sakê</h4>
+                            <ul class="space-y-2 text-sm text-slate-300">
+                                <li>• Vitória Régia</li>
+                                <li>• Gordon's</li>
+                                <li>• Beefeater</li>
+                                <li>• Sakê: Jun Daiti</li>
+                            </ul>
+                        </div>
+                        <div>
+                            <h4 class="text-brand-400 font-bold uppercase tracking-wider text-sm mb-3">Especiais</h4>
+                            <ul class="space-y-2 text-sm text-slate-300">
+                                <li>• Salton Brut</li>
+                                <li>• Licor de Triple Sec</li>
+                                <li>• Campari</li>
+                                <li>• Vermute</li>
+                                <li>• Clericot Salton Lunae</li>
+                            </ul>
+                        </div>
+                        <div>
+                            <h4 class="text-brand-400 font-bold uppercase tracking-wider text-sm mb-3">Rum & Cachaça</h4>
+                            <ul class="space-y-2 text-sm text-slate-300">
+                                <li>• Rum: Montilla Carta Branca</li>
+                                <li>• Cachaça: Sagatiba</li>
+                            </ul>
+                        </div>
+                        <div>
+                            <h4 class="text-brand-400 font-bold uppercase tracking-wider text-sm mb-3">Não Alcoólicos</h4>
+                            <ul class="space-y-2 text-sm text-slate-300">
+                                <li>• Suco de cranberry</li>
+                                <li>• Suco de pêssego</li>
+                                <li>• Tônica</li>
+                                <li>• Água com / sem gás</li>
+                            </ul>
+                        </div>
+                        <div>
+                            <h4 class="text-brand-400 font-bold uppercase tracking-wider text-sm mb-3">Energético & Shots</h4>
+                            <ul class="space-y-2 text-sm text-slate-300">
+                                <li>• Energético: Red Bull</li>
+                                <li>• Shots: Jägermeister</li>
+                                <li>• Shots: Tequila</li>
+                                <li>• Shots: Cachaça mel e limão</li>
+                            </ul>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Cardápio e Open Bar -->
-    <section id="cardapio" class="py-24 bg-brand-900 relative overflow-hidden">
+    <!-- Guia de Traje -->
+    <section id="traje" class="py-24 bg-brand-900 relative overflow-hidden">
         <div class="absolute inset-0 z-0 opacity-10 bg-pattern"></div>
         <div class="max-w-7xl mx-auto px-6 relative z-10">
             <div class="text-center mb-16 reveal">
-                <span class="text-gold-500 font-bold tracking-widest uppercase text-sm">Gastronomia</span>
-                <h2 class="font-serif text-4xl md:text-5xl text-white font-bold mt-2">Cardápio & Open Bar</h2>
+                <span class="text-brand-500 font-bold tracking-widest uppercase text-sm">Dress Code</span>
+                <h2 class="font-serif text-4xl md:text-5xl text-white font-bold mt-2">Guia de Traje</h2>
+                <p class="text-slate-400 mt-4 max-w-2xl mx-auto">Orientações para formandos e convidados em cada evento da turma.</p>
             </div>
 
-            <div class="grid md:grid-cols-2 gap-10">
-                <!-- Coluna Food -->
-                <div class="bg-white/5 backdrop-blur-sm border border-white/10 p-8 md:p-10 rounded-3xl reveal">
+            <div class="grid md:grid-cols-3 gap-8">
+                <!-- Jantar & Baile -->
+                <div class="bg-white/5 backdrop-blur-sm border border-white/10 p-8 rounded-3xl reveal">
                     <div class="flex items-center gap-4 mb-8 border-b border-white/10 pb-6">
-                        <div class="w-14 h-14 rounded-full bg-gold-500/20 text-gold-400 flex items-center justify-center">
-                            <i class="ph-fill ph-fork-knife text-3xl"></i>
+                        <div class="w-14 h-14 rounded-full bg-brand-500/20 text-brand-400 flex items-center justify-center">
+                            <i class="ph-fill ph-coat-hanger text-3xl"></i>
                         </div>
-                        <h3 class="font-serif text-3xl text-white font-bold">Ilhas & Jantar</h3>
+                        <h3 class="font-serif text-2xl text-white font-bold">Jantar & Baile</h3>
                     </div>
 
-                    <div class="space-y-8">
+                    <div class="space-y-6">
                         <div>
-                            <h4 class="text-gold-400 font-bold uppercase tracking-wider text-sm mb-3">Mesa de Frios (Entrada)</h4>
+                            <h4 class="text-brand-400 font-bold uppercase tracking-wider text-sm mb-3">Formandos (Gala)</h4>
                             <ul class="text-slate-300 space-y-2 text-sm">
-                                <li>• Queijos nobres (Brie, Parmesão, Gorgonzola)</li>
-                                <li>• Presunto Parma e Embutidos artesanais</li>
-                                <li>• Pães de fermentação natural, patês e geleias</li>
-                                <li>• Carpaccio clássico com alcaparras</li>
+                                <li>• Smoking preto e camisa branca</li>
+                                <li>• Jantar: gravata e faixa <strong class="text-green-400">verde</strong></li>
+                                <li>• Baile: gravata e faixa <strong class="text-slate-100">preta</strong></li>
+                                <li>• Feminino: vestido longo de gala</li>
                             </ul>
                         </div>
                         <div>
-                            <h4 class="text-gold-400 font-bold uppercase tracking-wider text-sm mb-3">Pratos Quentes (Jantar)</h4>
+                            <h4 class="text-brand-400 font-bold uppercase tracking-wider text-sm mb-3">Convidados</h4>
                             <ul class="text-slate-300 space-y-2 text-sm">
-                                <li>• Escalope de Mignon ao molho madeira</li>
-                                <li>• Salmão grelhado com alho poró e amêndoas</li>
-                                <li>• Ravioli de Búfala ao pomodoro (Opção Vegetariana)</li>
-                                <li>• Risoto de Funghi Secchi</li>
-                            </ul>
-                        </div>
-                        <div>
-                            <h4 class="text-gold-400 font-bold uppercase tracking-wider text-sm mb-3">Madrugada</h4>
-                            <ul class="text-slate-300 space-y-2 text-sm">
-                                <li>• Mini hambúrguer gourmet e batata frita (03h)</li>
-                                <li>• Mesa de Café da Manhã Completa (05h)</li>
+                                <li>• Social / passeio completo</li>
+                                <li>• Terno completo ou vestido longo / midi estruturado</li>
                             </ul>
                         </div>
                     </div>
                 </div>
 
-                <!-- Coluna Drinks -->
-                <div class="bg-white/5 backdrop-blur-sm border border-white/10 p-8 md:p-10 rounded-3xl reveal" style="transition-delay: 100ms;">
+                <!-- Colação & Culto -->
+                <div class="bg-white/5 backdrop-blur-sm border border-white/10 p-8 rounded-3xl reveal" style="transition-delay: 100ms;">
                     <div class="flex items-center gap-4 mb-8 border-b border-white/10 pb-6">
-                        <div class="w-14 h-14 rounded-full bg-gold-500/20 text-gold-400 flex items-center justify-center">
-                            <i class="ph-fill ph-martini text-3xl"></i>
+                        <div class="w-14 h-14 rounded-full bg-brand-500/20 text-brand-400 flex items-center justify-center">
+                            <i class="ph-fill ph-graduation-cap text-3xl"></i>
                         </div>
-                        <h3 class="font-serif text-3xl text-white font-bold">Open Bar Premium</h3>
+                        <h3 class="font-serif text-2xl text-white font-bold">Colação & Culto</h3>
                     </div>
 
-                    <div class="space-y-8">
+                    <div class="space-y-6">
                         <div>
-                            <h4 class="text-gold-400 font-bold uppercase tracking-wider text-sm mb-3">Cervejas</h4>
+                            <h4 class="text-brand-400 font-bold uppercase tracking-wider text-sm mb-3">Colação de Grau</h4>
                             <ul class="text-slate-300 space-y-2 text-sm">
-                                <li>• Chopp Artesanal (Pilsen e IPA)</li>
-                                <li>• Heineken e Stella Artois (Garrafa)</li>
-                                <li>• Cerveja sem álcool</li>
+                                <li>• Formandos: social escuro (preto, azul marinho etc.)</li>
+                                <li>• Convidados: esporte fino</li>
                             </ul>
                         </div>
                         <div>
-                            <h4 class="text-gold-400 font-bold uppercase tracking-wider text-sm mb-3">Destilados & Drinks</h4>
+                            <h4 class="text-brand-400 font-bold uppercase tracking-wider text-sm mb-3">Culto Ecumênico</h4>
                             <ul class="text-slate-300 space-y-2 text-sm">
-                                <li>• Whisky Chivas Regal 12 Anos</li>
-                                <li>• Vodka Absolut</li>
-                                <li>• Gin Bombay Sapphire (Ilha de Gin com especiarias)</li>
-                                <li>• Bar de Caipirinhas (Saquê, Vodka e Cachaça)</li>
-                                <li>• Moscow Mule, Aperol Spritz e Negroni</li>
+                                <li>• Formandos: cores claras (branco / off white)</li>
+                                <li>• Traje modesto — quem subir ao altar deve cobrir ombros e colo</li>
+                                <li>• Convidados: esporte fino modesto</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Esporte Fino -->
+                <div class="bg-white/5 backdrop-blur-sm border border-white/10 p-8 rounded-3xl reveal" style="transition-delay: 200ms;">
+                    <div class="flex items-center gap-4 mb-8 border-b border-white/10 pb-6">
+                        <div class="w-14 h-14 rounded-full bg-brand-500/20 text-brand-400 flex items-center justify-center">
+                            <i class="ph-fill ph-shirt text-3xl"></i>
+                        </div>
+                        <h3 class="font-serif text-2xl text-white font-bold">Esporte Fino</h3>
+                    </div>
+
+                    <div class="space-y-6">
+                        <div>
+                            <h4 class="text-brand-400 font-bold uppercase tracking-wider text-sm mb-3">Masculino</h4>
+                            <ul class="text-slate-300 space-y-2 text-sm">
+                                <li>• Calça alfaiataria / sarja</li>
+                                <li>• Camisa social e sapato</li>
+                                <li>• Blazer opcional, sem gravata</li>
                             </ul>
                         </div>
                         <div>
-                            <h4 class="text-gold-400 font-bold uppercase tracking-wider text-sm mb-3">Não Alcoólicos</h4>
+                            <h4 class="text-brand-400 font-bold uppercase tracking-wider text-sm mb-3">Feminino</h4>
                             <ul class="text-slate-300 space-y-2 text-sm">
-                                <li>• Sucos naturais variados</li>
-                                <li>• Refrigerantes (Normal e Zero)</li>
-                                <li>• Água Tônica e Água Mineral (com e sem gás)</li>
-                                <li>• Energético Red Bull</li>
+                                <li>• Vestidos midi / na altura do joelho</li>
+                                <li>• Macacões sofisticados</li>
+                                <li>• Conjuntos de saia e camisa</li>
                             </ul>
                         </div>
                     </div>
@@ -394,103 +736,104 @@
         </div>
     </section>
 
-    <!-- Instruções e Informações Importantes -->
-    <section id="instrucoes" class="py-24 bg-brand-50">
+    <!-- Estudantes -->
+    <section id="estudantes" class="py-24 bg-white">
+        <div class="max-w-6xl mx-auto px-6">
+            <div class="text-center mb-16 reveal">
+                <span class="text-brand-600 font-bold tracking-widest uppercase text-sm">Para os Formandos</span>
+                <h2 class="font-serif text-4xl md:text-5xl text-brand-900 font-bold mt-2">Estudantes</h2>
+                <p class="text-slate-500 mt-4 max-w-2xl mx-auto">Tudo o que a turma precisa em um só lugar, no painel oficial dos estudantes.</p>
+            </div>
+
+            <div class="bg-brand-900 rounded-3xl shadow-2xl shadow-brand-900/30 overflow-hidden reveal">
+                <div class="px-8 py-6 md:px-10 flex flex-col md:flex-row md:items-center md:justify-between gap-6">
+                    <div class="flex items-center gap-4">
+                        <div class="w-16 h-16 rounded-full bg-brand-500/20 text-brand-400 flex items-center justify-center shrink-0">
+                            <i class="ph-fill ph-layout text-3xl"></i>
+                        </div>
+                        <div>
+                            <h3 class="font-serif text-2xl md:text-3xl text-white font-bold">Painel do Estudante</h3>
+                            <p class="text-slate-400 text-sm mt-1">Dashboard da Turma XXVIII · Rumo ao CRM</p>
+                        </div>
+                    </div>
+                    <a href="https://viola-25.github.io/xxviii/" target="_blank" rel="noopener" class="inline-flex items-center justify-center gap-2 bg-brand-600 hover:bg-brand-500 text-white font-bold px-8 py-4 rounded-full transition-all whitespace-nowrap">
+                        <i class="ph-fill ph-arrow-square-out text-lg"></i> Acessar Dashboard
+                    </a>
+                </div>
+                <div class="px-8 md:px-10 pb-8 md:pb-10 border-t border-white/10 pt-6">
+                    <h4 class="text-brand-400 font-bold uppercase tracking-wider text-sm mb-4">O que você encontra por lá</h4>
+                    <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
+                        <div class="flex items-center gap-3 bg-white/5 border border-white/10 rounded-2xl p-4">
+                            <i class="ph-fill ph-folder-open text-brand-400 text-xl"></i>
+                            <span class="text-sm text-slate-300">Escala Geral</span>
+                        </div>
+                        <div class="flex items-center gap-3 bg-white/5 border border-white/10 rounded-2xl p-4">
+                            <i class="ph-fill ph-student text-brand-400 text-xl"></i>
+                            <span class="text-sm text-slate-300">Portal do Aluno</span>
+                        </div>
+                        <div class="flex items-center gap-3 bg-white/5 border border-white/10 rounded-2xl p-4">
+                            <i class="ph-fill ph-calendar-blank text-brand-400 text-xl"></i>
+                            <span class="text-sm text-slate-300">Cronograma & Fotos</span>
+                        </div>
+                        <div class="flex items-center gap-3 bg-white/5 border border-white/10 rounded-2xl p-4">
+                            <i class="ph-fill ph-bell-ringing text-brand-400 text-xl"></i>
+                            <span class="text-sm text-slate-300">Quadro de Avisos</span>
+                        </div>
+                        <div class="flex items-center gap-3 bg-white/5 border border-white/10 rounded-2xl p-4">
+                            <i class="ph-fill ph-book-open-text text-brand-400 text-xl"></i>
+                            <span class="text-sm text-slate-300">Diretrizes Médicas</span>
+                        </div>
+                        <div class="flex items-center gap-3 bg-white/5 border border-white/10 rounded-2xl p-4">
+                            <i class="ph-fill ph-cross text-brand-400 text-xl"></i>
+                            <span class="text-sm text-slate-300">Residência Médica</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Família & Convidados -->
+    <section id="familia" class="py-24 bg-brand-50 border-t border-slate-200">
         <div class="max-w-5xl mx-auto px-6">
             <div class="text-center mb-16 reveal">
-                <h2 class="font-serif text-4xl md:text-5xl text-brand-900 font-bold mb-4">Informações Importantes</h2>
-                <p class="text-slate-500">Tudo o que você precisa saber para aproveitar a noite sem preocupações.</p>
+                <span class="text-brand-600 font-bold tracking-widest uppercase text-sm">Para a Família</span>
+                <h2 class="font-serif text-4xl md:text-5xl text-brand-900 font-bold mt-2">Família & Convidados</h2>
             </div>
 
-            <div class="grid md:grid-cols-2 gap-6">
-                <!-- Card 1 -->
-                <div class="bg-white p-6 rounded-2xl shadow-sm border border-slate-100 flex gap-4 reveal">
-                    <div class="flex-shrink-0 mt-1">
-                        <i class="ph-fill ph-coat-hanger text-3xl text-gold-500"></i>
-                    </div>
-                    <div>
-                        <h4 class="font-bold text-brand-900 text-lg mb-1">Dress Code (Traje)</h4>
-                        <p class="text-sm text-slate-600"><strong>Gala / Passeio Completo.</strong> Para homens: Terno escuro completo com gravata. Para mulheres: Vestido longo. Não será permitida a entrada de bermuda, regata, boné ou chinelo.</p>
-                    </div>
-                </div>
-
-                <!-- Card 2 -->
-                <div class="bg-white p-6 rounded-2xl shadow-sm border border-slate-100 flex gap-4 reveal">
-                    <div class="flex-shrink-0 mt-1">
-                        <i class="ph-fill ph-ticket text-3xl text-gold-500"></i>
-                    </div>
-                    <div>
-                        <h4 class="font-bold text-brand-900 text-lg mb-1">Ingressos e Acesso</h4>
-                        <p class="text-sm text-slate-600">Apresentação obrigatória do <strong>convite físico e documento com foto</strong> na portaria. Crianças até 6 anos não pagam convite extra, mas devem apresentar documento.</p>
-                    </div>
-                </div>
-
-                <!-- Card 3 -->
-                <div class="bg-white p-6 rounded-2xl shadow-sm border border-slate-100 flex gap-4 reveal">
-                    <div class="flex-shrink-0 mt-1">
-                        <i class="ph-fill ph-car text-3xl text-gold-500"></i>
-                    </div>
-                    <div>
-                        <h4 class="font-bold text-brand-900 text-lg mb-1">Estacionamento</h4>
-                        <p class="text-sm text-slate-600">O local do Baile conta com estacionamento privativo e serviço de Valet. O custo é de R$ 40,00 por veículo. Se for beber, prefira usar aplicativos de transporte.</p>
-                    </div>
-                </div>
-
-                <!-- Card 4 -->
-                <div class="bg-white p-6 rounded-2xl shadow-sm border border-slate-100 flex gap-4 reveal">
-                    <div class="flex-shrink-0 mt-1">
-                        <i class="ph-fill ph-bag text-3xl text-gold-500"></i>
-                    </div>
-                    <div>
-                        <h4 class="font-bold text-brand-900 text-lg mb-1">Chapelaria Gratuita</h4>
-                        <p class="text-sm text-slate-600">Haverá serviço de chapelaria no hall de entrada para guardar bolsas, casacos e sapatos (quando descerem do salto!). Retirada mediante pulseira numerada.</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Playlists para entrar no clima -->
-    <section id="playlists" class="py-24 bg-white border-t border-slate-100">
-        <div class="max-w-5xl mx-auto px-6 text-center reveal">
-            <i class="ph-fill ph-spotify-logo text-6xl text-green-500 mb-6 mx-auto"></i>
-            <h2 class="font-serif text-3xl md:text-4xl text-brand-900 font-bold mb-4">Já vai entrando no clima!</h2>
-            <p class="text-slate-500 mb-12 max-w-2xl mx-auto">A comissão preparou duas playlists exclusivas no Spotify para você ir aquecendo para o nosso baile. Salve aí!</p>
-
-            <div class="flex flex-col md:flex-row justify-center gap-6">
-                <!-- Playlist 1 (Mockup visual) -->
-                <a href="#" class="block bg-brand-900 p-4 rounded-3xl w-full md:w-80 text-left hover:scale-105 transition-transform duration-300 shadow-xl shadow-brand-900/20 group">
-                    <div class="relative w-full h-48 rounded-2xl overflow-hidden mb-4">
-                        <img src="https://placehold.co/400x400/1ed760/000000?text=Aquecimento" alt="Capa Playlist" class="w-full h-full object-cover">
-                        <div class="absolute inset-0 bg-black/30 group-hover:bg-transparent transition-colors"></div>
-                        <div class="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity">
-                            <div class="w-16 h-16 bg-green-500 rounded-full flex items-center justify-center shadow-lg">
-                                <i class="ph-fill ph-play text-black text-2xl ml-1"></i>
-                            </div>
+            <div class="bg-white rounded-3xl shadow-xl shadow-slate-200/50 overflow-hidden reveal">
+                <div class="bg-brand-900 px-8 py-6">
+                    <div class="flex items-center gap-4">
+                        <div class="w-14 h-14 rounded-full bg-brand-500/20 text-brand-400 flex items-center justify-center shrink-0">
+                            <i class="ph-fill ph-calendar-blank text-3xl"></i>
+                        </div>
+                        <div>
+                            <h3 class="font-serif text-2xl text-white font-bold">Salvem as datas!</h3>
+                            <p class="text-brand-400 font-semibold text-sm uppercase tracking-widest mt-1">Outubro de 2026 · São Paulo/SP</p>
                         </div>
                     </div>
-                    <div class="px-2 pb-2">
-                        <h4 class="text-white font-bold text-lg mb-1 truncate">Esquenta Baile 2026</h4>
-                        <p class="text-slate-400 text-xs">Pela Comissão de Formatura • 5h 30min</p>
-                    </div>
-                </a>
+                </div>
+                <div class="p-8 md:p-10">
+                    <p class="text-slate-600 leading-relaxed mb-6">
+                        Pais, avós, irmãos e amigos: estes são os momentos oficiais da Turma XXVIII. Sejam parte dessa história!
+                    </p>
+                    <ul class="space-y-3 text-slate-700 mb-8">
+                        <li class="flex gap-3 items-start"><i class="ph-fill ph-graduation-cap text-brand-500 mt-1 flex-shrink-0"></i><span><strong>Colação de Grau</strong> — 06/10 (Ter), 18h30, Sala São Paulo.</span></li>
+                        <li class="flex gap-3 items-start"><i class="ph-fill ph-church text-brand-500 mt-1 flex-shrink-0"></i><span><strong>Culto Ecumênico</strong> — 07/10 (Qua), 14h00, Catedral da Sé.</span></li>
+                        <li class="flex gap-3 items-start"><i class="ph-fill ph-fork-knife text-brand-500 mt-1 flex-shrink-0"></i><span><strong>Jantar de Formatura</strong> — 08/10 (Qui), 21h00, ProMagno.</span></li>
+                        <li class="flex gap-3 items-start"><i class="ph-fill ph-confetti text-brand-500 mt-1 flex-shrink-0"></i><span><strong>Baile de Formatura</strong> — 10/10 (Sáb), 22h00, ProMagno.</span></li>
+                        <li class="flex gap-3 items-start"><i class="ph-fill ph-check-circle text-brand-500 mt-1 flex-shrink-0"></i><span>Traje dos convidados: veja o <a href="#traje" class="text-brand-600 font-semibold underline">guia de traje</a>.</span></li>
+                    </ul>
 
-                <!-- Playlist 2 (Mockup visual) -->
-                <a href="#" class="block bg-brand-900 p-4 rounded-3xl w-full md:w-80 text-left hover:scale-105 transition-transform duration-300 shadow-xl shadow-brand-900/20 group">
-                    <div class="relative w-full h-48 rounded-2xl overflow-hidden mb-4">
-                        <img src="https://placehold.co/400x400/eab308/000000?text=Sertanejo+Raiz" alt="Capa Playlist" class="w-full h-full object-cover">
-                        <div class="absolute inset-0 bg-black/30 group-hover:bg-transparent transition-colors"></div>
-                        <div class="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity">
-                            <div class="w-16 h-16 bg-green-500 rounded-full flex items-center justify-center shadow-lg">
-                                <i class="ph-fill ph-play text-black text-2xl ml-1"></i>
-                            </div>
-                        </div>
+                    <div class="flex flex-col sm:flex-row gap-4">
+                        <a href="https://www.instagram.com/medscxxviii/" target="_blank" rel="noopener" class="inline-flex items-center justify-center gap-2 bg-gradient-to-r from-brand-600 to-brand-700 hover:from-brand-500 hover:to-brand-600 text-white font-bold px-6 py-3 rounded-full transition-all">
+                            <i class="ph-fill ph-instagram-logo text-lg"></i> Acompanhe no Instagram
+                        </a>
+                        <a href="#cronograma" class="inline-flex items-center justify-center gap-2 border-2 border-brand-900 text-brand-900 hover:bg-brand-900 hover:text-white font-bold px-6 py-3 rounded-full transition-all">
+                            Ver todo o cronograma
+                        </a>
                     </div>
-                    <div class="px-2 pb-2">
-                        <h4 class="text-white font-bold text-lg mb-1 truncate">Sofrencia & Sertanejo</h4>
-                        <p class="text-slate-400 text-xs">Pela Comissão de Formatura • 3h 15min</p>
-                    </div>
-                </a>
+                </div>
             </div>
         </div>
     </section>
@@ -499,13 +842,36 @@
     <footer class="bg-brand-900 py-12 border-t border-white/10 text-center">
         <div class="max-w-4xl mx-auto px-6">
             <div class="flex items-center justify-center gap-2 mb-4">
-                <i class="ph-fill ph-graduation-cap text-gold-500 text-2xl"></i>
-                <h2 class="font-serif text-xl text-white font-bold tracking-wider">COMISSÃO 2026</h2>
+                <img src="Brasão-09.png" alt="Brasão da Turma XXVIII" class="w-8 h-auto object-contain">
+                <h2 class="font-serif text-xl text-white font-bold tracking-wider">COMISSÃO XXVIII</h2>
             </div>
-            <p class="text-slate-400 text-sm mb-2">Dúvidas? Entre em contato com o formando que te convidou ou com a comissão.</p>
-            <p class="text-slate-500 text-xs mt-8">© 2026 Comissão de Formatura. Desenvolvido para um dia inesquecível.</p>
+            <p class="text-slate-400 text-sm mb-2">Medicina · Centro Universitário São Camilo · "Rumo ao CRM"</p>
+            <p class="text-slate-500 text-xs mb-4">Dúvidas? Fale com o formando que te convidou ou com a comissão.</p>
+            <a href="https://www.instagram.com/medscxxviii/" target="_blank" rel="noopener" class="inline-flex items-center gap-2 text-slate-400 hover:text-brand-400 text-sm transition-colors">
+                <i class="ph-fill ph-instagram-logo text-lg"></i> @medscxxviii
+            </a>
+            <p class="text-slate-600 text-xs mt-8">© 2026 Comissão de Formatura Turma XXVIII. Um dia para nunca esquecer.</p>
         </div>
     </footer>
+
+    <!-- Gaveta de Playlist (Spotify) -->
+    <div id="playlist-backdrop" class="fixed inset-0 bg-black/60 z-[55] opacity-0 pointer-events-none transition-opacity duration-300"></div>
+    <div id="playlist-drawer" class="fixed inset-x-0 bottom-0 z-[60] translate-y-full transition-transform duration-500 ease-in-out">
+        <div class="bg-brand-900 rounded-t-3xl border-t border-white/10 shadow-2xl max-w-2xl mx-auto">
+            <div class="flex items-center justify-between px-6 pt-5 pb-4">
+                <div class="flex items-center gap-3">
+                    <i class="ph-fill ph-spotify-logo text-green-500 text-2xl"></i>
+                    <h4 id="playlist-title" class="font-serif text-xl font-bold text-white">Playlist</h4>
+                </div>
+                <button type="button" onclick="fecharPlaylist()" aria-label="Fechar" class="text-slate-300 hover:text-white p-2 rounded-full hover:bg-white/10 transition-colors">
+                    <i class="ph ph-x text-2xl"></i>
+                </button>
+            </div>
+            <div class="px-6 pb-6">
+                <iframe id="playlist-iframe" src="" width="100%" height="352" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy" title="Playlist" class="rounded-xl bg-white/10"></iframe>
+            </div>
+        </div>
+    </div>
 
     <!-- Scripts -->
     <script>
@@ -517,7 +883,6 @@
             menu.classList.toggle('hidden');
         });
 
-        // Fecha menu ao clicar nos links
         const menuLinks = menu.querySelectorAll('a');
         menuLinks.forEach(link => {
             link.addEventListener('click', () => {
@@ -537,38 +902,33 @@
             }
         });
 
-        // 3. Scroll Reveal (Animação de aparecer ao rolar a página)
+        // 3. Scroll Reveal
         function reveal() {
             var reveals = document.querySelectorAll(".reveal");
             for (var i = 0; i < reveals.length; i++) {
                 var windowHeight = window.innerHeight;
                 var elementTop = reveals[i].getBoundingClientRect().top;
-                var elementVisible = 100; // Quando o elemento entra 100px na tela
-                
+                var elementVisible = 100;
                 if (elementTop < windowHeight - elementVisible) {
                     reveals[i].classList.add("active");
                 }
             }
         }
         window.addEventListener("scroll", reveal);
-        reveal(); // Chama na carga inicial
+        reveal();
 
-        // 4. Lógica da Contagem Regressiva (Countdown)
-        // Defina a data da formatura aqui (Ano, Mês [0-11 onde 0 é Janeiro], Dia, Hora, Minuto)
-        // Exemplo: 15 de Dezembro de 2026 às 22:00
-        const dataFormatura = new Date(2026, 11, 15, 22, 0, 0).getTime();
+        // 4. Contagem Regressiva -> Colação de Grau (06/10/2026 18:30)
+        const dataFormatura = new Date(2026, 9, 6, 18, 30, 0).getTime();
 
         const atualizarContador = setInterval(function() {
             const agora = new Date().getTime();
             const diferenca = dataFormatura - agora;
 
-            // Cálculos para dias, horas, minutos e segundos
             const dias = Math.floor(diferenca / (1000 * 60 * 60 * 24));
             const horas = Math.floor((diferenca % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
             const minutos = Math.floor((diferenca % (1000 * 60 * 60)) / (1000 * 60));
             const segundos = Math.floor((diferenca % (1000 * 60)) / 1000);
 
-            // Atualiza o HTML se os elementos existirem
             const elDias = document.getElementById("dias");
             if (elDias) {
                 elDias.innerText = dias < 10 ? "0" + dias : dias;
@@ -577,10 +937,9 @@
                 document.getElementById("segundos").innerText = segundos < 10 ? "0" + segundos : segundos;
             }
 
-            // Se a contagem terminar, exibe mensagem
             if (diferenca < 0) {
                 clearInterval(atualizarContador);
-                if(elDias) {
+                if (elDias) {
                     document.getElementById("dias").innerText = "00";
                     document.getElementById("horas").innerText = "00";
                     document.getElementById("minutos").innerText = "00";
@@ -588,6 +947,57 @@
                 }
             }
         }, 1000);
+
+        // 5. Adicionar evento à agenda (baixa arquivo .ics)
+        function adicionarAgenda(titulo, local, inicio, fim) {
+            const ics = [
+                'BEGIN:VCALENDAR',
+                'VERSION:2.0',
+                'PRODID:-//Comissao TXXVIII//Formatura//PT',
+                'CALSCALE:GREGORIAN',
+                'BEGIN:VEVENT',
+                'UID:' + Date.now() + '@turmaxxviii',
+                'DTSTAMP:' + inicio + 'Z',
+                'DTSTART:' + inicio,
+                'DTEND:' + fim,
+                'SUMMARY:' + titulo,
+                'LOCATION:' + local,
+                'DESCRIPTION:Formatura Medicina Turma XXVIII - Rumo ao CRM',
+                'END:VEVENT',
+                'END:VCALENDAR'
+            ].join('\r\n');
+
+            const blob = new Blob([ics], { type: 'text/calendar;charset=utf-8' });
+            const url = URL.createObjectURL(blob);
+            const a = document.createElement('a');
+            a.href = url;
+            a.download = 'evento-turma-xxviii.ics';
+            document.body.appendChild(a);
+            a.click();
+            document.body.removeChild(a);
+            setTimeout(() => URL.revokeObjectURL(url), 1000);
+        }
+
+        // 6. Gaveta de Playlist (Spotify)
+        function abrirPlaylist(nome, playlistId) {
+            document.getElementById('playlist-title').textContent = nome;
+            document.getElementById('playlist-iframe').src = 'https://open.spotify.com/embed/playlist/' + playlistId + '?utm_source=generator';
+            document.getElementById('playlist-backdrop').classList.remove('opacity-0', 'pointer-events-none');
+            document.getElementById('playlist-drawer').classList.remove('translate-y-full');
+            document.body.style.overflow = 'hidden';
+        }
+
+        function fecharPlaylist() {
+            document.getElementById('playlist-backdrop').classList.add('opacity-0', 'pointer-events-none');
+            document.getElementById('playlist-drawer').classList.add('translate-y-full');
+            document.body.style.overflow = '';
+            document.getElementById('playlist-iframe').src = '';
+        }
+
+        document.getElementById('playlist-backdrop').addEventListener('click', fecharPlaylist);
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape') fecharPlaylist();
+        });
     </script>
 </body>
 </html>
