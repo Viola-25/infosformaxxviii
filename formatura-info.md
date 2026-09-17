@@ -37,11 +37,13 @@ Contagem regressiva do hero → **Colação de Grau (06/10/2026, 18:30)**.
 **Jantar de Formatura (08/10/26, ProMagno):**
 - **Fun7** — foto `atrações/fun7.jpg`
 - **Bonde do Tigrão** — foto `atrações/bondedotigrao.jfif`
+- **Missiato** — foto `atrações/missiato.jpg` (última atração)
 
 **Baile de Formatura (10/10/26, ProMagno):**
 - **Matheus Henrique e Gabriel** — foto `atrações/mheg.webp`
 - **Pagode do Chuvisco** — foto `atrações/chuvisco.jfif`
 - **Mc Lan** — foto `atrações/mclan.webp`
+- **GP da ZL** — foto `atrações/gp.jfif` (última atração)
 
 > Atrações de outros eventos (Culto etc.) ainda não confirmadas — adicionar no MD e no site quando definidas.
 
@@ -54,6 +56,8 @@ Playlists por artista confirmado (embed via `https://open.spotify.com/embed/play
 - **Matheus Henrique e Gabriel** (Baile): https://open.spotify.com/playlist/1PPrSgxjGGSfIen1NSnl1y
 - **Pagode do Chuvisco** (Baile): https://open.spotify.com/playlist/7588qUXD3NTSWL3ivLAhNz
 - **Mc Lan** (Baile): https://open.spotify.com/playlist/2hmeMagpJ6ru0hkCIKLbj2
+
+> **Missiato** (Jantar) e **GP da ZL** (Baile) ainda **sem playlist** — quando definida, adicionar aqui e ligar o clique no card.
 
 ## Open Bar do Jantar
 
@@ -112,7 +116,7 @@ Seções (nav fixa + menu mobile):
 
 1. **Hero** — marca, slogan "Rumo ao CRM", brasão, contagem regressiva p/ Colação de Grau, CTA Instagram.
 2. **Cronograma** — somente os **eventos futuros** (Cerimônias: Colação + Culto; Festas: Jantar + Baile). Sessões de fotos de maio removidas (já realizadas). Cada card tem botões interativos: **Maps**, **Waze** (rota até o local) e **Agenda** (baixa `.ics` via `adicionarAgenda()`).
-3. **Atrações** — artistas confirmados com fotos: Jantar = Fun7 + Bonde do Tigrão; Baile = Matheus Henrique e Gabriel + Pagode do Chuvisco + Mc Lan. Imagens em `atrações/`. **Playlists do Spotify embutidas** nos cards de cada evento ("Já vai entrando no clima"), embeds compactos (altura 152).
+3. **Atrações** — artistas confirmados com fotos: Jantar = Fun7 + Bonde do Tigrão + Missiato; Baile = Matheus Henrique e Gabriel + Pagode do Chuvisco + Mc Lan + GP da ZL. Imagens em `atrações/`. **Playlists do Spotify embutidas** nos cards de cada evento ("Já vai entrando no clima"), embeds compactos (altura 152). Cards sem playlist (Missiato, GP da ZL) são estáticos — sem overlay de play.
 4. **Open Bar** — bebidas das festas: Jantar (Vodkas, Whiskys, Gins, Cervejas, Especiais, Energético) e Baile (Vodkas, Whiskys, Cervejas, Gins & Sakê, Especiais, Rum & Cachaça, Não alcoólicos, Energético & Shots).
 5. **Traje** — 3 cards (Jantar & Baile / Colação & Culto / Esporte Fino), cada um com blocos *Formandos* e *Convidados*.
 6. **Estudantes** — card que leva ao painel dos estudantes (dashboard externo https://viola-25.github.io/xxviii/) com o que se encontra lá (Escala, Portal, Avisos, Diretrizes, Residência).
