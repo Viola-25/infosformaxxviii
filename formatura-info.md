@@ -21,7 +21,7 @@ Página de informações da **Comissão de Formatura da Turma XXVIII — Medicin
 | 29/05/26 (Sex) | 10:30 | Foto Oficial da Turma | Palácio dos Cedros | Formandos | ✔ Realizado |
 | 29/05/26 (Sex) | 15:00 | Fotos Organizações (Atlética, CA, DC) | Campus da SC | Formandos | ✔ Realizado |
 | 30/05/26 (Sáb) | 08:00 – 17:00 | Fotos: Família e Amigos | Campus da SC | Família | ✔ Realizado |
-| 06/10/26 (Ter) | 18:30 | Colação de Grau | Sala São Paulo | Todos | Próximo |
+| 06/10/26 (Ter) | 18:30 (chegada/fotos) · 20:00 (cerimônia) | Colação de Grau | Sala São Paulo | Todos | Próximo |
 | 07/10/26 (Qua) | 14:00 | Culto Ecumênico | Catedral da Sé | Todos | Próximo |
 | 08/10/26 (Qui) | 21:00 | Jantar de Formatura | ProMagno | Todos | Próximo |
 | 10/10/26 (Sáb) | 22:00 | Baile de Formatura | ProMagno | Todos | Próximo |
@@ -30,7 +30,7 @@ Página de informações da **Comissão de Formatura da Turma XXVIII — Medicin
 
 > ⚠️ O site **só exibe os eventos futuros** (Colação, Culto, Jantar e Baile). As sessões de fotos de maio já aconteceram e foram removidas da página. Manter essa regra: quando um evento passar, removê-lo do site.
 
-Contagem regressiva do hero → **Colação de Grau (06/10/2026, 18:30)**.
+Contagem regressiva do hero → **chegada da Colação de Grau (06/10/2026, 18:30)**. Formandos e convidados próximos chegam 18:30 para as fotos; a cerimônia inicia às 20:00 para todos.
 
 ## Atrações Confirmadas
 
