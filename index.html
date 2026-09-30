@@ -113,6 +113,7 @@
                 <!-- Links Desktop -->
                 <div class="hidden lg:flex space-x-6 items-center">
                     <a href="#cronograma" class="text-gray-300 hover:text-brand-400 transition-colors text-xs font-medium tracking-wide uppercase">Cronograma</a>
+                    <a href="#programacao" class="text-gray-300 hover:text-brand-400 transition-colors text-xs font-medium tracking-wide uppercase">Programação</a>
                     <a href="#atracoes" class="text-gray-300 hover:text-brand-400 transition-colors text-xs font-medium tracking-wide uppercase">Atrações</a>
                     <a href="#openbar" class="text-gray-300 hover:text-brand-400 transition-colors text-xs font-medium tracking-wide uppercase">Open Bar</a>
                     <a href="#traje" class="text-gray-300 hover:text-brand-400 transition-colors text-xs font-medium tracking-wide uppercase">Traje</a>
@@ -134,6 +135,7 @@
         <div id="mobile-menu" class="hidden lg:hidden glass-nav border-t border-white/10">
             <div class="px-4 pt-2 pb-6 space-y-2 flex flex-col">
                 <a href="#cronograma" class="text-gray-300 hover:text-brand-400 block py-3 border-b border-white/5 text-sm font-medium uppercase tracking-wider">Cronograma</a>
+                <a href="#programacao" class="text-gray-300 hover:text-brand-400 block py-3 border-b border-white/5 text-sm font-medium uppercase tracking-wider">Programação</a>
                 <a href="#atracoes" class="text-gray-300 hover:text-brand-400 block py-3 border-b border-white/5 text-sm font-medium uppercase tracking-wider">Atrações</a>
                 <a href="#openbar" class="text-gray-300 hover:text-brand-400 block py-3 border-b border-white/5 text-sm font-medium uppercase tracking-wider">Open Bar</a>
                 <a href="#traje" class="text-gray-300 hover:text-brand-400 block py-3 border-b border-white/5 text-sm font-medium uppercase tracking-wider">Traje</a>
@@ -300,7 +302,7 @@
                                     <h4 class="font-serif text-xl font-bold text-brand-900">Jantar de Formatura</h4>
                                     <span class="bg-brand-900 text-brand-400 text-[10px] font-bold px-2 py-0.5 rounded-full uppercase tracking-wider">Gala</span>
                                 </div>
-                                <p class="text-slate-600 text-sm"><i class="ph-fill ph-clock text-brand-500"></i> 21h00</p>
+                                <p class="text-slate-600 text-sm"><i class="ph-fill ph-clock text-brand-500"></i> 21h00 <span class="text-slate-400">— até 04h00</span></p>
                                 <p class="text-slate-600 text-sm"><i class="ph-fill ph-map-pin text-brand-500"></i> ProMagno</p>
                                 <div class="flex flex-wrap gap-2 mt-4">
                                     <a href="https://www.google.com/maps/dir/?api=1&destination=ProMagno+S%C3%A3o+Paulo+SP" target="_blank" rel="noopener" class="inline-flex items-center gap-1.5 text-[11px] font-bold uppercase tracking-wide bg-brand-600 text-white px-3 py-1.5 rounded-full hover:bg-brand-500 transition-colors">
@@ -309,7 +311,7 @@
                                     <a href="https://waze.com/ul?q=ProMagno%20S%C3%A3o%20Paulo%20SP&navigate=yes" target="_blank" rel="noopener" class="inline-flex items-center gap-1.5 text-[11px] font-bold uppercase tracking-wide bg-blue-600 text-white px-3 py-1.5 rounded-full hover:bg-blue-500 transition-colors">
                                         <i class="ph-fill ph-navigation-arrow text-sm"></i> Waze
                                     </a>
-                                    <button type="button" onclick="adicionarAgenda('Jantar de Formatura — Turma XXVIII Medicina São Camilo','ProMagno — São Paulo/SP','20261008T210000','20261009T010000')" class="inline-flex items-center gap-1.5 text-[11px] font-bold uppercase tracking-wide bg-slate-700 text-white px-3 py-1.5 rounded-full hover:bg-slate-600 transition-colors cursor-pointer">
+                                    <button type="button" onclick="adicionarAgenda('Jantar de Formatura — Turma XXVIII Medicina São Camilo','ProMagno — São Paulo/SP','20261008T210000','20261009T040000')" class="inline-flex items-center gap-1.5 text-[11px] font-bold uppercase tracking-wide bg-slate-700 text-white px-3 py-1.5 rounded-full hover:bg-slate-600 transition-colors cursor-pointer">
                                         <i class="ph-fill ph-calendar-plus text-sm"></i> Agenda
                                     </button>
                                 </div>
@@ -326,7 +328,7 @@
                                     <h4 class="font-serif text-xl font-bold text-white">Baile de Formatura</h4>
                                     <span class="bg-brand-500 text-white text-[10px] font-bold px-2 py-0.5 rounded-full uppercase tracking-wider">Gala</span>
                                 </div>
-                                <p class="text-slate-300 text-sm"><i class="ph-fill ph-clock text-brand-500"></i> 22h00</p>
+                                <p class="text-slate-300 text-sm"><i class="ph-fill ph-clock text-brand-500"></i> 22h00 <span class="text-slate-400">— até 05h00</span></p>
                                 <p class="text-slate-300 text-sm"><i class="ph-fill ph-map-pin text-brand-500"></i> ProMagno</p>
                                 <div class="flex flex-wrap gap-2 mt-4">
                                     <a href="https://www.google.com/maps/dir/?api=1&destination=ProMagno+S%C3%A3o+Paulo+SP" target="_blank" rel="noopener" class="inline-flex items-center gap-1.5 text-[11px] font-bold uppercase tracking-wide bg-brand-500 text-white px-3 py-1.5 rounded-full hover:bg-brand-400 transition-colors">
@@ -335,7 +337,7 @@
                                     <a href="https://waze.com/ul?q=ProMagno%20S%C3%A3o%20Paulo%20SP&navigate=yes" target="_blank" rel="noopener" class="inline-flex items-center gap-1.5 text-[11px] font-bold uppercase tracking-wide bg-blue-500 text-white px-3 py-1.5 rounded-full hover:bg-blue-400 transition-colors">
                                         <i class="ph-fill ph-navigation-arrow text-sm"></i> Waze
                                     </a>
-                                    <button type="button" onclick="adicionarAgenda('Baile de Formatura — Turma XXVIII Medicina São Camilo','ProMagno — São Paulo/SP','20261010T220000','20261011T040000')" class="inline-flex items-center gap-1.5 text-[11px] font-bold uppercase tracking-wide bg-white/15 text-white px-3 py-1.5 rounded-full hover:bg-white/25 transition-colors cursor-pointer">
+                                    <button type="button" onclick="adicionarAgenda('Baile de Formatura — Turma XXVIII Medicina São Camilo','ProMagno — São Paulo/SP','20261010T220000','20261011T050000')" class="inline-flex items-center gap-1.5 text-[11px] font-bold uppercase tracking-wide bg-white/15 text-white px-3 py-1.5 rounded-full hover:bg-white/25 transition-colors cursor-pointer">
                                         <i class="ph-fill ph-calendar-plus text-sm"></i> Agenda
                                     </button>
                                 </div>
@@ -343,6 +345,83 @@
                             </div>
                         </div>
                     </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Programação -->
+    <section id="programacao" class="py-24 bg-brand-900 relative overflow-hidden">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="text-center mb-16 reveal">
+                <span class="text-brand-400 font-bold tracking-widest uppercase text-sm">Time Table</span>
+                <h2 class="font-serif text-4xl md:text-5xl text-white font-bold mt-2">Programação das Festas</h2>
+                <p class="text-slate-400 mt-4 max-w-2xl mx-auto">Horário a horário do Jantar e do Baile no ProMagno — do início ao fim.</p>
+            </div>
+
+            <div class="grid md:grid-cols-2 gap-8">
+                <!-- Programação do Jantar -->
+                <div class="bg-white rounded-3xl p-8 md:p-10 shadow-xl reveal">
+                    <div class="flex items-center gap-4 mb-6 border-b border-slate-100 pb-6">
+                        <div class="w-14 h-14 rounded-full bg-brand-500/20 text-brand-600 flex items-center justify-center shrink-0">
+                            <i class="ph-fill ph-fork-knife text-3xl"></i>
+                        </div>
+                        <div>
+                            <h3 class="font-serif text-2xl font-bold text-brand-900">Jantar de Formatura</h3>
+                            <p class="text-brand-600 font-semibold text-sm mt-1">08 de Outubro · 21h00 → 04h00 · ProMagno</p>
+                        </div>
+                    </div>
+
+                    <ul class="text-sm">
+                        <li class="flex items-baseline gap-4 py-2.5 border-b border-slate-100"><span class="font-mono font-bold text-brand-600 w-32 shrink-0">21:00</span><span class="text-slate-700 font-medium">Início do evento</span></li>
+                        <li class="flex items-baseline gap-4 py-2.5 border-b border-slate-100"><span class="font-mono font-bold text-brand-600 w-32 shrink-0">21:00 – 22:30</span><span class="text-slate-500">DJ residente</span></li>
+                        <li class="flex items-baseline gap-4 py-2.5 border-b border-slate-100"><span class="font-mono font-bold text-brand-600 w-32 shrink-0">22:30 – 23:30</span><span class="text-brand-900 font-semibold">Valsa</span></li>
+                        <li class="flex items-baseline gap-4 py-2.5 border-b border-slate-100"><span class="font-mono font-bold text-brand-600 w-32 shrink-0">23:30 – 00:30</span><span class="text-brand-900 font-semibold">Fun 7</span></li>
+                        <li class="flex items-baseline gap-4 py-2.5 border-b border-slate-100"><span class="font-mono font-bold text-brand-600 w-32 shrink-0">00:30 – 01:00</span><span class="text-slate-500">Troca de palco — DJ residente</span></li>
+                        <li class="flex items-baseline gap-4 py-2.5 border-b border-slate-100"><span class="font-mono font-bold text-brand-600 w-32 shrink-0">01:00 – 02:00</span><span class="text-brand-900 font-semibold">Bonde do Tigrão</span></li>
+                        <li class="flex items-baseline gap-4 py-2.5 border-b border-slate-100"><span class="font-mono font-bold text-brand-600 w-32 shrink-0">02:00 – 02:30</span><span class="text-slate-500">Troca de palco — DJ residente</span></li>
+                        <li class="flex items-baseline gap-4 py-2.5 border-b border-slate-100"><span class="font-mono font-bold text-brand-600 w-32 shrink-0">02:30 – 03:30</span><span class="text-brand-900 font-semibold">Missiato</span></li>
+                        <li class="flex items-baseline gap-4 py-2.5 border-b border-slate-100"><span class="font-mono font-bold text-brand-600 w-32 shrink-0">03:30 – 04:00</span><span class="text-slate-500">Troca de palco — DJ residente</span></li>
+                        <li class="flex items-baseline gap-4 py-2.5"><span class="font-mono font-bold text-brand-600 w-32 shrink-0">04:00</span><span class="text-slate-700 font-medium">Fim</span></li>
+                    </ul>
+
+                    <a href="mapa-jantar.jpeg" target="_blank" rel="noopener" class="block mt-6 group">
+                        <img src="mapa-jantar.jpeg" alt="Mapa de mesas do Jantar de Formatura" loading="lazy"
+                             class="w-full rounded-2xl border border-slate-200 object-contain bg-white group-hover:shadow-md transition-shadow">
+                        <p class="text-xs text-slate-500 mt-2 flex items-center gap-1.5"><i class="ph-fill ph-magnifying-glass-plus text-brand-500"></i> Clique para ampliar o mapa do jantar</p>
+                    </a>
+                </div>
+
+                <!-- Programação do Baile -->
+                <div class="bg-white/5 border border-white/10 rounded-3xl p-8 md:p-10 shadow-xl reveal" style="transition-delay: 100ms;">
+                    <div class="flex items-center gap-4 mb-6 border-b border-white/10 pb-6">
+                        <div class="w-14 h-14 rounded-full bg-brand-500/20 text-brand-400 flex items-center justify-center shrink-0">
+                            <i class="ph-fill ph-confetti text-3xl"></i>
+                        </div>
+                        <div>
+                            <h3 class="font-serif text-2xl font-bold text-white">Baile de Formatura</h3>
+                            <p class="text-brand-400 font-semibold text-sm mt-1">10 de Outubro · 22h00 → 05h00 · ProMagno</p>
+                        </div>
+                    </div>
+
+                    <ul class="text-sm">
+                        <li class="flex items-baseline gap-4 py-2.5 border-b border-white/10"><span class="font-mono font-bold text-brand-400 w-32 shrink-0">22:00</span><span class="text-slate-200 font-medium">Início do evento</span></li>
+                        <li class="flex items-baseline gap-4 py-2.5 border-b border-white/10"><span class="font-mono font-bold text-brand-400 w-32 shrink-0">22:00 – 23:30</span><span class="text-slate-400">DJ residente</span></li>
+                        <li class="flex items-baseline gap-4 py-2.5 border-b border-white/10"><span class="font-mono font-bold text-brand-400 w-32 shrink-0">23:30 – 00:30</span><span class="text-white font-semibold">Matheus Henrique e Gabriel</span></li>
+                        <li class="flex items-baseline gap-4 py-2.5 border-b border-white/10"><span class="font-mono font-bold text-brand-400 w-32 shrink-0">00:30 – 01:00</span><span class="text-white font-semibold">Bateria São Camilo</span></li>
+                        <li class="flex items-baseline gap-4 py-2.5 border-b border-white/10"><span class="font-mono font-bold text-brand-400 w-32 shrink-0">01:00 – 02:00</span><span class="text-white font-semibold">Chuvisco</span></li>
+                        <li class="flex items-baseline gap-4 py-2.5 border-b border-white/10"><span class="font-mono font-bold text-brand-400 w-32 shrink-0">02:00 – 02:30</span><span class="text-slate-400">Troca de palco — DJ residente</span></li>
+                        <li class="flex items-baseline gap-4 py-2.5 border-b border-white/10"><span class="font-mono font-bold text-brand-400 w-32 shrink-0">02:30 – 03:30</span><span class="text-white font-semibold">MC Lan</span></li>
+                        <li class="flex items-baseline gap-4 py-2.5 border-b border-white/10"><span class="font-mono font-bold text-brand-400 w-32 shrink-0">03:30 – 04:00</span><span class="text-slate-400">Troca de palco — DJ residente</span></li>
+                        <li class="flex items-baseline gap-4 py-2.5 border-b border-white/10"><span class="font-mono font-bold text-brand-400 w-32 shrink-0">04:00 – 05:00</span><span class="text-white font-semibold">GP da ZL</span></li>
+                        <li class="flex items-baseline gap-4 py-2.5"><span class="font-mono font-bold text-brand-400 w-32 shrink-0">05:00</span><span class="text-slate-200 font-medium">Fim</span></li>
+                    </ul>
+
+                    <a href="mapa-baile.jpeg" target="_blank" rel="noopener" class="block mt-6 group">
+                        <img src="mapa-baile.jpeg" alt="Mapa de mesas do Baile de Formatura" loading="lazy"
+                             class="w-full rounded-2xl border border-white/10 object-contain bg-white group-hover:shadow-md transition-shadow">
+                        <p class="text-xs text-slate-400 mt-2 flex items-center gap-1.5"><i class="ph-fill ph-magnifying-glass-plus text-brand-400"></i> Clique para ampliar o mapa do baile</p>
+                    </a>
                 </div>
             </div>
         </div>
